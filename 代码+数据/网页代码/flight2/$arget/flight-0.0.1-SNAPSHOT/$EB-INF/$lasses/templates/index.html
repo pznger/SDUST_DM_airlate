@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="baidu-site-verification" content="ucoHEaVHET">
+    <title>KKflight</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="航班动态,航班状态,航班动态跟踪,航班延误,航班准点,跟踪航班动态,航班延误查询,航班动态实时查询">
+    <meta name="baidu-site-verification" content="1Sfs5p7h72">
+    <meta name="360-site-verification" content="db5186c019ef79035320330aa2aa63ff">
+    <link rel="stylesheet" th:href="@{jquery.autocomplete.css}">
+    <link rel="stylesheet" th:href="@{widget_new.css}">
+    <link rel="stylesheet" th:href="@{index_new.css}">
+    <link rel="stylesheet" th:href="@{float.css}">
+    <link rel="stylesheet" th:href="@{datePicker.css}">
+    <link rel="stylesheet" th:href="@{ui-dialog.css}">
+    <link rel="stylesheet" th:href="@{personCenter.css}">
+    <link rel="stylesheet" th:href="@{downApp.css}">
+    <link rel="stylesheet" th:href="@{sundries.css}">
+    <link rel="stylesheet" th:href="@{aboutme.css}">
+    <link rel="stylesheet" th:href="@{base.css}">
+
+    <link rel="shortcut icon" href="http://www.variflight.com/_newstatic/dest/img/favicon.ico">
+    <script src="http://www.variflight.com/_newstatic/dest/js/push.js.下载"></script>
+    <script src="http://www.variflight.com/_newstatic/dest/js/hm.js.下载"></script>
+    <script th:src="@{layer.js}"></script>
+    <script th:src="@{jquery.js}"></script>
+    <script src="http://www.variflight.com/_newstatic/dest/js/countryCode.js.下载"></script>
+    <script>
+        var currentModule = "flight";
+        var currentController = "index";
+        var currentAction = "index";
+    </script>
+    <style>
+        .single:before {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 6px solid #999999;
+            position: absolute;
+            right: 10px;
+            top: 28px;
+        }
+    </style>
+    <script>
+        var BASE_URL = '/';
+        var SITE_ID = 'AE71649A58c77';
+
+        function getUrl(url, params) {
+            url = BASE_URL + url;
+            var querystr = '';
+            if (params) {
+                if (typeof params == 'object') {
+                    querystr = $.param(params)
+                } else {
+                    if (params.indexOf("&") == 0) {
+                        params = params.substr(1, params.length);
+                    }
+                    querystr = params;
+                }
+            }
+
+            var p = url.indexOf("?");
+            if (querystr && p !== -1) {
+                url = url.substr(0, p) + '?' + SITE_ID + "&" + url.substr(url.indexOf('?') + 1, url.length)
+                url = url + "&" + querystr;
+            } else if (querystr) {
+                url = url + "?" + SITE_ID + '&' + querystr;
+            } else {
+                url = url + "?" + SITE_ID;
+            }
+            return url;
+        }
+    </script>
+    <link rel="stylesheet" th:href="@{layer.css}" id="layui_layer_skinlayercss" style="">
+</head>
+
+<body>
+<div class="header_wrap">
+    <div class="header">
+        <div class="topMenu clearfix">
+            <div class="link logo pull-left" style="margin-top: 0px;">
+
+                    <img th:src="@{logo.jpg}"
+                         width="156" alt="logo">
+
+            </div>
+            <ul class="menu item pull-left">
+                <li class="top-menu-item  top-menu-curr ">
+                    <a href="http://www.variflight.com/?AE71649A58c77=" class="menu-hd"><span>首页</span></a>
+                </li>
+                <li class="top-menu-item top-menu-noclick">
+                    <a class="menu-hd cur_pointer">
+                        <span>KKFlight</span>
+                    </a>
+                    <div class="menu-dropdown common-header-clearfix">
+                        <div class="menu-dropdown-inner">
+                            <p><a href="http://www.airsavvi.com/zh/services?id=1" target="_blank">航班实时追踪</a></p>
+                            <p><a href="http://www.airsavvi.com/zh/services?id=2" target="_blank">行程规划工具</a>
+                            </p>
+                            <p><a href="http://www.airsavvi.com/zh/services?id=3" target="_blank">航班动态服务</a>
+                            </p>
+                            <p><a href="http://www.airsavvi.com/zh/services?id=4" target="_blank">航班舒适度指数</a>
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li class="top-menu-item">
+                    <a href="http://www.variflight.com/offical?AE71649A58c77=" target="_blank" class="menu-hd"><span>媒体中心</span></a>
+                </li>
+                <li class="top-menu-item top-menu-noclick">
+                    <a href="http://www.variflight.com/download?AE71649A58c77=" class="menu-hd cur_pointer"
+                       target="_blank">
+                        <span>客户端</span>
+                    </a>
+                    <div class="menu-dropdown common-header-clearfix">
+                        <div class="menu-dropdown-inner">
+                            <p><a href="http://www.variflight.com/download?AE71649A58c77=" target="_blank">旅客版APP</a>
+                            </p>
+                            <p><a href="http://www.variflight.com/ontimereport/ynbapp/index?AE71649A58c77="
+                                  target="_blank">业内版APP</a>
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="myfeeyo_log pull-right menu item pull-left" id="selectBox">
+                <!-- <li class="english_link" style="border:1px solid red;"><a href="/en">English</a>|<a href="/ru/">Русский</a>|<a href="/ru/">Español</a></li> -->
+                <li class="top-menu-item top-menu-noclick">
+                    <a href="http://www.variflight.com/en" class="cur_pointer single" id="english">
+                        <span id="englishSpan">English</span>
+                    </a>
+                    <div class="menu-dropdown common-header-clearfix">
+                        <div class="menu-dropdown-inner">
+                            <p><a href="http://www.variflight.com/language/ru?AE71649A58c77=" id="russian">Русский</a>
+                            </p>
+                            <p><a href="http://www.variflight.com/language/es?AE71649A58c77=" id="spain">Español</a></p>
+                        </div>
+                    </div>
+                </li>
+                <li class="userLogin myHomeCenter" style="display: none">
+                    <div class="usercenter_m">
+                        <a class="usercenter_in" href="http://www.variflight.com/user/center?AE71649A58c77="
+                           style="background:none;color:#222;">个人中心</a>
+                        <div class="menu-dropdown-inner">
+                            <!-- <p><a href="/user/record?AE71649A58c77=">订制记录</a></p> -->
+                            <!-- <p><a href="/user/invoicelist?AE71649A58c77=">我的行程单</a></p> -->
+                            <p><a href="http://www.variflight.com/user/revise?AE71649A58c77=">修改资料</a></p>
+                            <p><a href="javascript:;" onclick="c_server.widget.signOut();">退出登录</a></p>
+                        </div>
+                    </div>
+                </li>
+                <li class="userLogin loginRegPanel" style="display: block">
+                    <a href="javascript:feeyo.openModel(&#39;用户登录&#39;,log_model)">登录 / 注册</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    function GetQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+
+    var lite = getUrl('lite');
+    var access = GetQueryString("ch");
+    if (access != "mveryzhun") {
+        var mobileAgents = ['Windows CE', 'iPod', 'Symbian', 'iPhone', 'BlackBerry', 'Android'];
+        var sUserAgent = navigator.userAgent;
+        if (sUserAgent.indexOf('Android') > -1 && (sUserAgent.indexOf('ERD79') > -1 || sUserAgent.indexOf('MZ60') > -1 || sUserAgent.indexOf('GT-P7')) > -1) {
+        } else {
+            if (location.href.indexOf('?pc') == -1) {
+
+                for (var i = 0; i < mobileAgents.length; i++) {
+                    if (sUserAgent.indexOf(mobileAgents[i]) > -1) {
+                        var show = location.href.substring(location.href.indexOf('show') + 'show='.length);
+//                            show == '1' ? '' : location.href = 'http://i.variflight.com/';
+                        show == '1' ? '' : location.href = lite;
+                        break;
+                    }
+                }
+            }
+        }
+    }
+</script>
+<div class="f_content" style="background:#88b7e4;width:100%;">
+    <!-- 恢复了？ -->
+    <div class="big_BG"
+         style=" background:url(http://www.variflight.com/_newstatic/img/indexBg_new.jpg) no-repeat 50% 0;">
+        <div class="fySearch">
+            <div class="stopImg">
+                <p class="mt">Living on time</p>
+                <p class="mc">精准可靠的航班动态数据服务</p>
+                <div id="byNum" class="mc">
+                    <input id="byNumBtn"  type="button" class="y-btn-grey" style="width: 400px;height: 40px" value="查 询">
+                </div>
+            </div>
+            <div class="stopMain clearfix" style="padding-left:100px;">
+
+<!--                <div id="byNum" class="mc">-->
+<!--                        <input id="byNumBtn"  type="button" class="y-btn-grey" value="查 询">-->
+<!--                </div>-->
+                <div id="byCity" class="left" style="display:none;">
+                    <div class="Citylabel left">
+                        <input type="text" placeholder="出发城市" maxlength="20" onclick="search_input_focus(this)"
+                               onblur="search_input_blur()" class="bor autocomplete ac_input ciptbug" data-id="dep_city"
+                               id="dep_city" style="color:#000" autocomplete="off">
+                        <div class="change" id="changeCity"></div>
+                        <input type="text" placeholder="到达城市" maxlength="20" onclick="search_input_focus(this)"
+                               onblur="search_input_blur()" class="bor autocomplete ac_input ciptbug" data-id="arr_city"
+                               id="arr_city" style="color:#000" autocomplete="off">
+                        <div id="cityFilterBox">
+                            <div class="cityFilterWrap">
+                                <div class="cityFilterIn">
+                                    <div class="cityFilterHead">
+                                        <ul class="clearfix">
+                                            <li class="cur">热门</li>
+                                            <li>ABCD</li>
+                                            <li>EFGH</li>
+                                            <li>JKLM</li>
+                                            <li>NOPQRS</li>
+                                            <li>TUVWX</li>
+                                            <li>YZ</li>
+                                            <li id="hotOutTog" style="padding:0px;">国际/港澳台热门</li>
+                                        </ul>
+                                    </div>
+                                    <div class="cityFilterTable" id="cityFilterTable">
+                                        <div class="cityFilterHot">
+                                            <ul>
+                                                <li style="padding-left:0">
+                                                    <div class="cityFilterLabel"></div>
+                                                    <div class="cityByHot clearfix"><span code="PEK">北京首都</span><span
+                                                            code="PKX">北京大兴</span><span code="CAN">广州白云</span><span
+                                                            code="PVG">上海浦东</span><span code="SHA">上海虹桥</span><span
+                                                            code="CTU">成都双流</span><span code="SZX">深圳宝安</span><span
+                                                            code="KMG">昆明长水</span><span code="XIY">西安咸阳</span><span
+                                                            code="CKG">重庆江北</span><span code="HGH">杭州萧山</span><span
+                                                            code="XMN">厦门高崎</span><span code="NKG">南京禄口</span><span
+                                                            code="WUH">武汉天河</span><span code="SHE">沈阳桃仙</span><span
+                                                            code="TAO">青岛流亭</span><span code="FOC">福州长乐</span><span
+                                                            code="SYX">三亚凤凰</span><span code="TSN">天津滨海</span></div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="cityFilterByAD">
+                                            <ul>
+                                                <li>
+                                                    <div class="cityFilterLabel">A</div>
+                                                    <div class="cityByA clearfix"><span code="AHJ">阿坝红原</span><span
+                                                            code="YIE">阿尔山伊尔施</span><span code="AKU">阿克苏温宿</span><span
+                                                            code="AAT">阿勒泰</span><span code="NGQ">阿里昆莎</span><span
+                                                            code="AKA">安康</span><span code="AQG">安庆天柱山</span><span
+                                                            code="AOG">鞍山腾鳌</span><span code="AVA">安顺黄果树</span><span
+                                                            code="AYN">安阳北郊</span><span code="MFM">澳门</span></div>
+                                                </li>
+                                                <li>
+                                                    <div class="cityFilterLabel">B</div>
+                                                    <div class="cityByB clearfix"><span code="AEB">百色田阳</span><span
+                                                            code="BSD">保山云瑞</span><span code="BAV">包头二里半</span><span
+                                                            code="RLK">巴彦淖尔天吉泰</span><span code="MFK">北竿</span><span
+                                                            code="BHY">北海福成</span><span code="PEK,NAY">北京</span><span
+                                                            code="PKX">北京大兴</span><span code="NAY">北京南苑</span><span
+                                                            code="PEK">北京首都</span><span code="BFJ">毕节飞雄</span><span
+                                                            code="BPL">博乐阿拉山口</span></div>
+                                                </li>
+                                                <li>
+                                                    <div class="cityFilterLabel">C</div>
+                                                    <div class="cityByC clearfix"><span code="CGQ">长春龙嘉</span><span
+                                                            code="CGD">常德桃花源</span><span code="BPX">昌都邦达</span><span
+                                                            code="CSX">长沙黄花</span><span code="CIH">长治王村</span><span
+                                                            code="CZX">常州奔牛</span><span code="CHG">朝阳</span><span
+                                                            code="CTU">成都双流</span><span code="CIF">赤峰玉龙</span><span
+                                                            code="JUH">池州九华山</span><span code="CKG">重庆江北</span></div>
+                                                </li>
+                                                <li>
+                                                    <div class="cityFilterLabel">D</div>
+                                                    <div class="cityByD clearfix"><span code="DLU">大理荒草坝</span><span
+                                                            code="DDG">丹东浪头</span><span code="DCY">稻城亚丁</span><span
+                                                            code="DQA">大庆萨尔图</span><span code="DAT">大同云冈</span><span
+                                                            code="DAX">达州河市</span><span code="HXD">德令哈</span><span
+                                                            code="DIG">迪庆香格里拉</span><span code="DOY">东营胜利</span><span
+                                                            code="DNH">敦煌</span><span code="DLC">大连周水子</span></div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="cityFilterByEH">
+                                            <ul>
+                                                <li>
+                                                    <div class="cityFilterLabel">E</div>
+                                                    <div class="cityByE clearfix"><span code="EJN">额济纳旗桃来</span><span
+                                                            code="ENH">恩施许家坪</span><span code="ERL">二连浩特赛乌素</span></div>
+                                                </li>
+                                                <li>
+                                                    <div class="cityFilterLabel">F</div>
+                                                    <div class="cityByF clearfix"><span code="LCX">福建龙岩冠豸山</span><span
+                                                            code="FUG">阜阳西关</span><span code="FYJ">抚远东极</span><span
+                                                            code="FYN">富蕴</span><span code="FOC">福州长乐</span></div>
+                                                </li>
+                                                <li>
+                                                    <div class="cityFilterLabel">G</div>
+                                                    <div class="cityByG clearfix"><span code="KOW">赣州黄金</span><span
+                                                            code="KHH">高雄</span><span code="GOQ">格尔木</span><span
+                                                            code="GYS">广元盘龙</span><span code="CAN">广州白云</span><span
+                                                            code="KWL">桂林两江</span><span code="KWE">贵阳龙洞堡</span><span
+                                                            code="GYU">固原六盘山</span></div>
+                                                </li>
+                                                <li>
+                                                    <div class="cityFilterLabel">H</div>
+                                                    <div class="cityByH clearfix"><span code="HRB">哈尔滨太平</span><span
+                                                            code="HAK">海口美兰</span><span code="HLD">海拉尔东山</span><span
+                                                            code="HMI">哈密</span><span code="HDG">邯郸</span><span
+                                                            code="HGH">杭州萧山</span><span code="HZG">汉中城固</span><span
+                                                            code="HCJ">河池金城江</span><span code="HFE">合肥新桥</span><span
+                                                            code="HEK">黑河</span><span code="HCN">恒春五里亭</span><span
+                                                            code="HNY">衡阳南岳</span><span code="HTN">和田</span><span
+                                                            code="HIA">淮安涟水</span><span code="HJJ">怀化芷江</span><span
+                                                            code="HUN">花莲</span><span code="TXN">黄山屯溪</span><span
+                                                            code="HTT">花土沟</span><span code="HET">呼和浩特白塔</span><span
+                                                            code="HUZ">惠州平潭</span></div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="cityFilterByJM">
+                                            <ul>
+                                                <li>
+                                                    <div class="cityFilterLabel">J</div>
+                                                    <div class="cityByJ clearfix"><span code="JMU">佳木斯</span><span
+                                                            code="CYI">嘉义</span><span code="JGN">嘉峪关</span><span
+                                                            code="SWA">揭阳潮汕</span><span code="JIL">吉林二台子</span><span
+                                                            code="TNA">济南遥墙</span><span code="JIC">金昌金川</span><span
+                                                            code="JDZ">景德镇罗家</span><span code="JGS">井冈山</span><span
+                                                            code="JNG">济宁曲阜</span><span code="JNZ">锦州湾</span><span
+                                                            code="JIU">九江庐山</span><span code="JZH">九寨沟黄龙</span><span
+                                                            code="JXA">鸡西兴凯湖</span></div>
+                                                </li>
+                                                <li>
+                                                    <div class="cityFilterLabel">K</div>
+                                                    <div class="cityByK clearfix"><span code="KJI">喀纳斯布尔津</span><span
+                                                            code="KGT">康定</span><span code="KHG">喀什</span><span
+                                                            code="KRY">克拉玛依</span><span code="KCA">库车龟兹</span><span
+                                                            code="KRL">库尔勒</span><span code="KMG">昆明长水</span></div>
+                                                </li>
+                                                <li>
+                                                    <div class="cityFilterLabel">L</div>
+                                                    <div class="cityByL clearfix"><span code="LXA">拉萨贡嘎</span><span
+                                                            code="LYG">连云港白塔埠</span><span code="LLB">荔波</span><span
+                                                            code="LJG">丽江三义</span><span code="LNJ">临沧博尚</span><span
+                                                            code="LFQ">临汾乔李</span><span code="LXI">林西</span><span
+                                                            code="LYI">临沂沭埠岭</span><span code="LZY">林芝米林</span><span
+                                                            code="HZH">黎平</span><span code="LPF">六盘水月照</span><span
+                                                            code="LZH">柳州白莲</span><span code="LYA">洛阳北郊</span><span
+                                                            code="LZO">泸州蓝田</span><span code="LLV">吕梁大武</span></div>
+                                                </li>
+                                                <li>
+                                                    <div class="cityFilterLabel">M</div>
+                                                    <div class="cityByM clearfix"><span code="LUM">芒市</span><span
+                                                            code="NZH">满洲里西郊</span><span code="MXZ">梅县长岗岌</span><span
+                                                            code="MIG">绵阳南郊</span><span code="OHE">漠河古莲</span><span
+                                                            code="MDG">牡丹江海浪</span></div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="cityFilterByNS">
+                                            <ul>
+                                                <li>
+                                                    <div class="cityFilterLabel">N</div>
+                                                    <div class="cityByN clearfix"><span code="KHN">南昌昌北</span><span
+                                                            code="NAO">南充高坪</span><span code="LZN">南竿</span><span
+                                                            code="NKG">南京禄口</span><span code="NNG">南宁吴圩</span><span
+                                                            code="YXG">南沙永暑礁</span><span code="NTG">南通兴东</span><span
+                                                            code="NNY">南阳姜营</span><span code="NGB">宁波栎社</span><span
+                                                            code="NLH">宁蒗泸沽湖</span></div>
+                                                </li>
+                                                <li>
+                                                    <div class="cityFilterLabel">P</div>
+                                                    <div class="cityByP clearfix"><span code="PIF">屏东</span><span
+                                                            code="SYM">普洱思茅</span></div>
+                                                </li>
+                                                <li>
+                                                    <div class="cityFilterLabel">Q</div>
+                                                    <div class="cityByQ clearfix"><span code="IQM">且末</span><span
+                                                            code="CMJ">七美</span><span code="TAO">青岛流亭</span><span
+                                                            code="IQN">庆阳西峰</span><span code="SHP">秦皇岛山海关</span><span
+                                                            code="NDG">齐齐哈尔三家子</span><span code="JJN">泉州晋江</span><span
+                                                            code="JUZ">衢州</span></div>
+                                                </li>
+                                                <li>
+                                                    <div class="cityFilterLabel">R</div>
+                                                    <div class="cityByR clearfix"><span code="RIZ">日照山字河</span></div>
+                                                </li>
+                                                <li>
+                                                    <div class="cityFilterLabel">S</div>
+                                                    <div class="cityByS clearfix"><span code="SYX">三亚凤凰</span><span
+                                                            code="PVG,SHA">上海</span><span code="SHA">上海虹桥</span><span
+                                                            code="PVG">上海浦东</span><span code="SQD">上饶三清山</span><span
+                                                            code="KNH">尚义</span><span code="HSC">韶关</span><span
+                                                            code="HPG">神农架红坪</span><span code="SHE">沈阳桃仙</span><span
+                                                            code="SZX">深圳宝安</span><span code="SHF">石河子花园</span><span
+                                                            code="SJW">石家庄正定</span><span code="WDS">十堰武当山</span></div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="cityFilterByTX">
+                                            <ul>
+                                                <li>
+                                                    <div class="cityFilterLabel">T</div>
+                                                    <div class="cityByT clearfix"><span code="TPE,TSA">台北</span><span
+                                                            code="TSA">台北松山</span><span code="TPE">台北桃园</span><span
+                                                            code="TTT">台东丰年</span><span code="TNN">台南</span><span
+                                                            code="TYN">太原武宿</span><span code="TXG">台中</span><span
+                                                            code="RMQ">台中清泉岗</span><span code="HYN">台州路桥</span><span
+                                                            code="TVS">唐山三女河</span><span code="TCZ">腾冲驼峰</span><span
+                                                            code="TSN">天津滨海</span><span code="THQ">天水麦积山</span><span
+                                                            code="TNH">通化</span><span code="TGO">通辽</span><span
+                                                            code="TEN">铜仁凤凰</span><span code="TLQ">吐鲁番交河</span></div>
+                                                </li>
+                                                <li>
+                                                    <div class="cityFilterLabel">W</div>
+                                                    <div class="cityByW clearfix"><span code="WEF">潍坊</span><span
+                                                            code="WEH">威海大水泊</span><span code="WNH">文山普者黑</span><span
+                                                            code="WNZ">温州龙湾</span><span code="WUA">乌海</span><span
+                                                            code="WUH">武汉天河</span><span code="UCB">乌兰察布集宁</span><span
+                                                            code="HLH">乌兰浩特依勒力特</span><span
+                                                            code="URC">乌鲁木齐地窝堡</span><span code="WUX">无锡硕放</span><span
+                                                            code="WUS">武夷山</span><span code="WUZ">梧州长洲岛</span></div>
+                                                </li>
+                                                <li>
+                                                    <div class="cityFilterLabel">X</div>
+                                                    <div class="cityByX clearfix"><span code="XMN">厦门高崎</span><span
+                                                            code="HKG">香港赤鱲角</span><span code="XFN">襄阳刘集</span><span
+                                                            code="XIY">西安咸阳</span><span code="XIC">西昌青山</span><span
+                                                            code="XIL">锡林浩特</span><span code="XNT">邢台褡裢</span><span
+                                                            code="ACX">兴义万峰林</span><span code="XNN">西宁曹家堡</span><span
+                                                            code="WUT">忻州五台山</span><span code="JHG">西双版纳嘎洒</span><span
+                                                            code="XUZ">徐州观音</span></div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="cityFilterByYZ">
+                                            <ul>
+                                                <li>
+                                                    <div class="cityFilterLabel">Y</div>
+                                                    <div class="cityByY clearfix"><span code="YNZ">盐城南洋</span><span
+                                                            code="YTY">扬州泰州</span><span code="YNJ">延吉朝阳川</span><span
+                                                            code="YNT">烟台蓬莱</span><span code="YBP">宜宾菜坝</span><span
+                                                            code="YIH">宜昌三峡</span><span code="LDS">伊春林都</span><span
+                                                            code="YIC">宜春明月山</span><span code="INC">银川河东</span><span
+                                                            code="YKH">营口兰旗</span><span code="YIN">伊宁</span><span
+                                                            code="YIW">义乌</span><span code="LLF">永州零陵</span><span
+                                                            code="RHT">右旗巴丹吉林</span><span code="UYN">榆林榆阳</span><span
+                                                            code="YCU">运城关公</span><span code="YUS">玉树巴塘</span></div>
+                                                </li>
+                                                <li>
+                                                    <div class="cityFilterLabel">Z</div>
+                                                    <div class="cityByZ clearfix"><span code="ZQZ">张家口宁远</span><span
+                                                            code="YZY">张掖甘州</span><span code="ZHA">湛江</span><span
+                                                            code="ZAT">昭通</span><span code="CGO">郑州新郑</span><span
+                                                            code="ZHY">中卫沙坡头</span><span code="HSN">舟山普陀山</span><span
+                                                            code="ZUH">珠海金湾</span><span code="ZYI">遵义新舟</span><span
+                                                            code="AXF">左旗巴彦浩特</span></div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cityFilterOut">
+                                    <div class="cityFilterHead">
+                                        <ul class="clearfix">
+                                            <li class="cur" style="padding:0px;">国际/港澳台热门</li>
+                                            <li>亚洲</li>
+                                            <li>欧洲</li>
+                                            <li>美洲</li>
+                                            <li>非洲</li>
+                                            <li>大洋洲</li>
+                                            <li id="hotInTog">国内热门</li>
+                                        </ul>
+                                    </div>
+                                    <div class="cityFilterTable" id="cityFilterTable2">
+                                        <div class="cityFilterByOuthot clearfix"><span code="HKG">香港赤鱲角</span><span
+                                                code="GMP">首尔金浦</span><span code="ICN">首尔仁川</span><span code="TPE,TSA">台北</span><span
+                                                code="TSA">台北松山</span><span code="TPE">台北桃园</span><span
+                                                code="NRT">东京成田</span><span code="HND">东京羽田</span><span
+                                                code="SIN">新加坡樟宜</span><span code="MFM">澳门</span><span code="BKK">曼谷(素万那普)</span><span
+                                                code="KIX">大阪关西</span><span code="ITM">大阪伊丹</span><span code="SGN">胡志明市新山一</span><span
+                                                code="MNL">马尼拉</span><span code="NGO">名古屋中部/新特丽亚</span><span code="LGW">伦敦盖特威克</span><span
+                                                code="LHR">伦敦希思罗</span><span code="KUL">吉隆坡</span><span
+                                                code="PUS">釜山金海</span><span code="SYD">悉尼金斯福德·史密斯</span><span
+                                                code="FRA">法兰克福</span><span code="YVR">温哥华</span><span
+                                                code="ORY">巴黎－奥利</span><span code="CDG">巴黎戴高乐</span><span code="JFK">纽约肯尼迪</span><span
+                                                code="LGA">纽约拉瓜迪亚</span><span code="LAX">洛杉矶</span><span code="VKO">莫斯科伏努科沃</span><span
+                                                code="SVO">莫斯科谢诺梅杰沃</span><span code="DME">莫斯科多莫杰多沃</span></div>
+                                        <div class="cityFilterByAsia clearfix"><span code="HKG">香港赤鱲角</span><span
+                                                code="NRT">东京成田</span><span code="HND">东京羽田</span><span code="TPE,TSA">台北</span><span
+                                                code="TSA">台北松山</span><span code="TPE">台北桃园</span><span
+                                                code="GMP">首尔金浦</span><span code="ICN">首尔仁川</span><span
+                                                code="SIN">新加坡樟宜</span><span code="BKK">曼谷(素万那普)</span><span code="KUL">吉隆坡</span><span
+                                                code="KIX">大阪关西</span><span code="ITM">大阪伊丹</span><span
+                                                code="MFM">澳门</span><span code="CGK">雅加达苏加诺-哈达</span><span code="SGN">胡志明市新山一</span><span
+                                                code="MNL">马尼拉</span><span code="DPS">登巴萨巴厘岛</span><span code="NGO">名古屋中部/新特丽亚</span><span
+                                                code="HKT">普吉岛普吉</span><span code="HAN">河内内拜</span><span
+                                                code="MLE">马累</span><span code="DXB">迪拜</span><span
+                                                code="PUS">釜山金海</span><span code="KTM">加德满都</span><span
+                                                code="KHH">高雄</span><span code="FUK">福冈</span><span code="PNH">金边</span><span
+                                                code="DEL">新德里德里</span><span code="CJU">济州岛济州</span><span code="IST">伊斯坦布尔阿塔图尔克</span><span
+                                                code="ULN">乌兰巴托</span><span code="BOM">孟买</span></div>
+                                        <div class="cityFilterByEurope clearfix"><span code="LGW">伦敦盖特威克</span><span
+                                                code="LHR">伦敦希思罗</span><span code="ORY">巴黎－奥利</span><span code="CDG">巴黎戴高乐</span><span
+                                                code="FRA">法兰克福</span><span code="VKO">莫斯科伏努科沃</span><span code="SVO">莫斯科谢诺梅杰沃</span><span
+                                                code="DME">莫斯科多莫杰多沃</span><span code="FCO">罗马菲乌米奇诺</span><span
+                                                code="AMS">荷兰阿姆斯特丹斯史基浦(西霍普)</span><span code="LIN">米兰利纳特</span><span
+                                                code="MXP">米兰马尔本萨</span><span code="MUC">慕尼黑</span><span code="ARN">斯德哥尔摩</span><span
+                                                code="SXF">柏林舍讷费尔德</span><span code="TXL">柏林泰格尔</span><span code="MAN">曼彻斯特</span><span
+                                                code="MAD">马德里</span><span code="ZRH">苏黎世</span><span
+                                                code="BRU">布鲁塞尔</span><span code="CPH">哥本哈根</span><span
+                                                code="HEL">赫尔辛基</span><span code="BCN">巴塞罗那</span><span
+                                                code="ATH">雅典</span><span code="EDI">爱丁堡</span><span
+                                                code="BHX">伯明翰</span><span code="NTL">纽卡斯尔威廉斯敦</span><span code="GVA">日内瓦</span><span
+                                                code="LED">圣彼得堡</span><span code="IEV">基辅</span><span
+                                                code="BUD">布达佩斯</span><span code="HAM">汉堡</span><span
+                                                code="PRG">布拉格</span></div>
+                                        <div class="cityFilterByAmerica clearfix"><span code="JFK">纽约肯尼迪</span><span
+                                                code="LGA">纽约拉瓜迪亚</span><span code="LAX">洛杉矶</span><span
+                                                code="SFO">旧金山</span><span code="YVR">温哥华</span><span
+                                                code="ORD">芝加哥奥黑尔</span><span code="YYZ">多伦多皮尔逊</span><span code="SEA">西雅图塔科马</span><span
+                                                code="IAD">华盛顿杜勒斯</span><span code="BOS">波士顿</span><span code="DTW">底特律大都会</span><span
+                                                code="IAH">休斯敦</span><span code="YUL">蒙特利尔特鲁多</span><span code="AHL">Aishalton夏威夷</span><span
+                                                code="SPN">塞班</span><span code="GRU">圣保罗</span><span
+                                                code="YOW">渥太华</span><span code="MEX">墨西哥城</span><span code="LAS">拉斯维加斯麦卡伦</span><span
+                                                code="YYC">卡尔加里CALGARY</span><span code="EZE">布宜诺斯艾利斯埃塞萨皮斯塔里尼部长</span>
+                                        </div>
+                                        <div class="cityFilterByAfrica clearfix"><span code="CAI">开罗</span><span
+                                                code="JNB">约翰内斯堡</span><span code="CPT">开普敦开普顿</span><span code="NBO">内罗毕乔莫·肯雅塔</span><span
+                                                code="LAD">罗安达二月四日</span><span code="MRU">毛里求斯</span><span code="DAR">达累斯萨拉姆尼雷尔</span><span
+                                                code="ADD">亚的斯亚贝巴博乐</span><span code="ACC">阿克拉科托卡</span><span
+                                                code="DUR">德班</span><span code="HRE">哈拉雷</span></div>
+                                        <div class="cityFilterByOceania clearfix"><span
+                                                code="SYD">悉尼金斯福德·史密斯</span><span code="MEL">墨尔本</span><span code="AKL">奥克兰</span><span
+                                                code="BNE">布里斯班</span><span code="ADL">阿德莱德</span><span
+                                                code="PER">珀斯</span><span code="WLG">惠灵顿</span><span
+                                                code="CBR">堪培拉</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="history_city">
+                                <div class="history_city_tit">
+                                    <div class="history_city_tit_line"></div>
+                                    <div class="history_city_tit_txt">暂无历史起降地记录</div>
+                                </div>
+                                <div class="history_city_table" id="history_city_table">
+                                    <ul></ul>
+                                </div>
+                            </div>
+                            <div class="history_code">
+                                <ul></ul>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <label class="container left datepicker_l">
+                        <div class="text">出发时间</div>
+                        <span class="datepic"></span>
+                        <input type="text" maxlength="10" id="cityDatepicker" value="2020-05-19" class="index_date"
+                               readonly="">
+                        <div class="clear"></div>
+                    </label>
+                    <p class="left">
+                        <input id="byCityBtn" name="byCityBtn" type="button" class="y-btn-grey" value="查 询">
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="downAppI">
+            <!--            <span onclick="window.open(getUrl(&#39;download&#39;))"><img-->
+            <!--                    src="./飞常准_航班延误短信通知,准点信息,航班动态,航班跟踪客户端,航班和机场延误查询,飞行旅客的航班管家, 让世界更准点_files/down_app.png">飞常准APP下载</span>-->
+        </div>
+    </div>
+    <div class="i_item clear">
+        <ul>
+            <li>
+                <h2>精准预测<b>起降时间</b></h2>
+                <img class="blue" src="http://www.variflight.com/_newstatic/dest/img/ico_tt.png">
+                <p>精准预测航班起降时间，查询航班历史准点率情况</p>
+            </li>
+            <li>
+                <h2>智能<b>延误分析</b></h2>
+                <img class="blue" src="http://www.variflight.com/_newstatic/dest/img/ico_tw.png">
+                <p>专业智能的航班延误分析，通过数据深度剖析航班延误原因</p>
+            </li>
+            <li>
+                <h2>航班<b>动态查询</b></h2>
+                <img class="blue" src="http://www.variflight.com/_newstatic/dest/img/ico_th.png">
+                <p>提供准确可靠的航班起降、延误、取消等实时动态信息查询</p>
+            </li>
+            <li>
+                <h2>定制<b>航班动态</b></h2>
+                <img class="blue" src="http://www.variflight.com/_newstatic/dest/img/ico_tf.png">
+                <p>一键定制航班动态信息，帮助飞行旅客跟踪航班实时动态</p>
+            </li>
+        </ul>
+    </div>
+    <hr>
+
+</div>
+<!--footer begin -->
+<div class="footer">
+    <p class="f_t">
+        <a href="http://www.sojump.hk/jq/7288134.aspx" target="_blank">意见反馈 </a> |
+        <a href="http://www.variflight.com/offical?AE71649A58c77=">新闻动态</a> |
+        <a href="http://www.variflight.com/about?AE71649A58c77=">关于我们</a> |
+        <a href="http://www.variflight.com/contact?AE71649A58c77=">联系我们</a> |
+        <a href="http://www.variflight.com/join?AE71649A58c77=">加入我们</a> |
+        <a href="http://www.variflight.com/solution/apply?AE71649A58c77=">申请合作</a> |
+        <a href="http://www.variflight.com/customers?AE71649A58c77=">合作伙伴</a> |
+        <a href="http://www.variflight.com/sitemap.html?AE71649A58c77=" target="_blank">航班列表</a> |
+        <a href="http://www.variflight.com/gtcx?AE71649A58c77=" target="_blank">高铁出行</a> |
+        <a href="http://www.variflight.com/h5/service?AE71649A58c77=" target="_blank">服务协议</a> |
+        <a href="http://www.variflight.com/h5/privacy?AE71649A58c77=" target="_blank">隐私政策</a> |
+        <a href="https://app.variflight.com/html/module/common/question.html#/detail/231?tdsourcetag=s_pctim_aiomsg"
+           target="_blank">营业执照</a>
+    </p>
+    <p> Copyright©2020大连理工大学
+        &nbsp;&nbsp;<a
+                href="https://sas.cmmiinstitute.com/pars/pars_detail.aspx?a=28350">
+            <img src="http://www.variflight.com/_newstatic/dest/img/footer-CMMI.png"
+                 style="vertical-align:middle"></a></p>
+    <p>友情链接：
+        <a href="http://www.carnoc.com/" target="_blank" style="color: #999">民航资源网</a> |
+        <a href="http://www.jdair.net/" target="_blank" style="color: #999">首都航空</a> |
+        <a href="http://www.csair.com/" target="_blank" style="color: #999">南方航空</a> |
+        <a href="http://www.belltrip.cn/" target="_blank" style="color: #999">驼铃网</a> |
+        <a href="http://www.fuzhou-air.cn/" target="_blank" style="color: #999">福州航空</a>|
+        <a href="http://www.carnoc.com/AFT/index.html" target="_blank" style="color: #999">趋势论坛</a>
+    </p>
+</div>
+<div id="wechatImg"><img style="width:70%;"
+                         src="./飞常准_航班延误短信通知,准点信息,航班动态,航班跟踪客户端,航班和机场延误查询,飞行旅客的航班管家, 让世界更准点_files/wechat.jpg"></div>
+<!--footer end -->
+
+<!--[if lt IE 9]>
+<script src="/_newstatic/dest/js/css3-mediaqueries.js?v=1c89f92924aa4d49cccaf8db486f72aa"></script>
+<![endif]-->
+<script src="./飞常准_航班延误短信通知,准点信息,航班动态,航班跟踪客户端,航班和机场延误查询,飞行旅客的航班管家, 让世界更准点_files/c_server.js.下载"></script>
+<script src="./飞常准_航班延误短信通知,准点信息,航班动态,航班跟踪客户端,航班和机场延误查询,飞行旅客的航班管家, 让世界更准点_files/ie8_placeholder.js.下载"></script>
+<script src="./飞常准_航班延误短信通知,准点信息,航班动态,航班跟踪客户端,航班和机场延误查询,飞行旅客的航班管家, 让世界更准点_files/common_new.js.下载"></script>
+<script src="./飞常准_航班延误短信通知,准点信息,航班动态,航班跟踪客户端,航班和机场延误查询,飞行旅客的航班管家, 让世界更准点_files/model.js.下载"></script>
+<script src="./飞常准_航班延误短信通知,准点信息,航班动态,航班跟踪客户端,航班和机场延误查询,飞行旅客的航班管家, 让世界更准点_files/dialog-plus-min.js.下载"></script>
+<script src="./飞常准_航班延误短信通知,准点信息,航班动态,航班跟踪客户端,航班和机场延误查询,飞行旅客的航班管家, 让世界更准点_files/layer.js.下载"></script>
+<script src="./飞常准_航班延误短信通知,准点信息,航班动态,航班跟踪客户端,航班和机场延误查询,飞行旅客的航班管家, 让世界更准点_files/jquery.datepicker.js.下载"></script>
+<script src="./飞常准_航班延误短信通知,准点信息,航班动态,航班跟踪客户端,航班和机场延误查询,飞行旅客的航班管家, 让世界更准点_files/datepicker.zh-CN.js.下载"></script>
+<script src="./飞常准_航班延误短信通知,准点信息,航班动态,航班跟踪客户端,航班和机场延误查询,飞行旅客的航班管家, 让世界更准点_files/jquery.autocomplete.js.下载"></script>
+<script src="./飞常准_航班延误短信通知,准点信息,航班动态,航班跟踪客户端,航班和机场延误查询,飞行旅客的航班管家, 让世界更准点_files/airportlist.js.下载"></script>
+<script src="./飞常准_航班延误短信通知,准点信息,航班动态,航班跟踪客户端,航班和机场延误查询,飞行旅客的航班管家, 让世界更准点_files/flySearch_debug.js.下载"></script>
+<script src="./飞常准_航班延误短信通知,准点信息,航班动态,航班跟踪客户端,航班和机场延误查询,飞行旅客的航班管家, 让世界更准点_files/backend.js.下载"></script>
+<script src="./飞常准_航班延误短信通知,准点信息,航班动态,航班跟踪客户端,航班和机场延误查询,飞行旅客的航班管家, 让世界更准点_files/citiesinbyAZ.js.下载"></script>
+<script src="./飞常准_航班延误短信通知,准点信息,航班动态,航班跟踪客户端,航班和机场延误查询,飞行旅客的航班管家, 让世界更准点_files/citiesoutbyarea.js.下载"></script>
+<script src="./飞常准_航班延误短信通知,准点信息,航班动态,航班跟踪客户端,航班和机场延误查询,飞行旅客的航班管家, 让世界更准点_files/cityFilter.js.下载"></script>
+<script src="./飞常准_航班延误短信通知,准点信息,航班动态,航班跟踪客户端,航班和机场延误查询,飞行旅客的航班管家, 让世界更准点_files/jobs.js.下载"></script>
+<script src="./飞常准_航班延误短信通知,准点信息,航班动态,航班跟踪客户端,航班和机场延误查询,飞行旅客的航班管家, 让世界更准点_files/jquery.form.js.下载"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?d1f759cd744b691c20c25f874cadc061";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+
+</script>
+<script>
+    $("#byNumBtn").click(function () {
+        // var airNo = $("#byNumInput").val();
+        // var airDate = $("#numDatepicker").val();
+        // $.ajax({
+        //     url:"http://localhost:8080/detail",
+        //     async:false,
+        //
+        // })
+        window.location.href="/detail"
+    })
+</script>
+<script src="./飞常准_航班延误短信通知,准点信息,航班动态,航班跟踪客户端,航班和机场延误查询,飞行旅客的航班管家, 让世界更准点_files/11.0.1.js.下载" id="sozz"></script>
+<script charset="utf-8"
+        src="./飞常准_航班延误短信通知,准点信息,航班动态,航班跟踪客户端,航班和机场延误查询,飞行旅客的航班管家, 让世界更准点_files/ab77b6ea7f3fbf79.js.下载"></script>
+</body>
+</html>

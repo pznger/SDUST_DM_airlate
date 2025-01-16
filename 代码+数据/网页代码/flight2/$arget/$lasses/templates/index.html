@@ -1,0 +1,1303 @@
+﻿<!DOCTYPE html>
+<html lang="zxx" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+	<!-- META -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="">
+    <meta name="author" content="aonetheme">
+    <meta name="robots" content="">    
+    <meta name="description" content="Tranel Travel Tour Website">
+    
+    <!-- FAVICONS ICON -->
+    <link rel="icon" th:href="@{page/images/favicon.ico}" type="image/x-icon">
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{page/images/favicon.png}">
+    
+    <!-- PAGE TITLE HERE -->
+    <title>Tranel | Home Page Style 1</title>
+    
+    <!-- MOBILE SPECIFIC -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">	
+    
+	<!-- BOOTSTRAP STYLE SHEET -->
+	<link th:href="@{page/css/bootstrap.min.css}" rel="stylesheet">
+	<!-- FONTAWESOME STYLE SHEET -->
+	<link th:href="@{page/css/font-awesome.min.css}" rel="stylesheet">
+	<!-- Feather STYLE SHEET -->
+	<link th:href="@{page/css/feather.css}" rel="stylesheet">
+	<!-- FLATICON STYLE SHEET -->
+	<link th:href="@{page/css/flaticon.min.css}" rel="stylesheet">
+	<!-- WOW ANIMATE STYLE SHEET -->
+	<link th:href="@{page/css/animate.css}" rel="stylesheet">
+	<!-- OWL CAROUSEL STYLE SHEET -->
+	<link th:href="@{page/css/owl.carousel.min.css}" rel="stylesheet">
+	<!-- MAGNIFIC POPUP STYLE SHEET -->
+	<link th:href="@{page/css/magnific-popup.min.css}" rel="stylesheet">
+	<!-- DATE PICKER STYLE SHEET -->
+	<link th:href="@{page/css/date-picker.css}" rel="stylesheet">
+	<!-- LC LIGHT BOX STYLE SHEET -->
+	<link th:href="@{page/css/lc_lightbox.css}" rel="stylesheet">
+	<!-- MAIN STYLE SHEET -->
+	<link th:href="@{page/css/style.css}" rel="stylesheet">
+
+</head>
+
+<body class="aon-body-bg aon-bg-light-red">
+    
+    <!-- LOADING AREA START ===== -->
+    <div class="loading-area">
+        <div class="loading-box"></div>
+        <div class="loading-pic">
+            <div class="loading">
+				<span>Loading</span>
+			</div>
+        </div>
+    </div>
+    <!-- LOADING AREA  END ====== -->
+    
+	<div class="page-wraper">
+     
+		<!-- HEADER START -->
+		<header class="site-header header-style-2 mobile-sider-drawer-menu">
+			<!--Top bar section End-->
+			<div class="sticky-header main-bar-wraper  navbar-expand-lg">
+				<div class="main-bar">  
+
+					<div class="container clearfix"> 
+						<!--Logo section start-->
+						<div class="logo-header">
+							<div class="logo-header-inner logo-header-one">
+								<a href="index.html">
+									<img  src="images/logo.png" alt="">
+								</a>
+							</div>
+						</div>  
+						<!--Logo section End-->
+
+						<!-- NAV Toggle Button -->
+						<button id="mobile-side-drawer" data-target=".header-nav" data-toggle="collapse" type="button" class="navbar-toggler collapsed">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar icon-bar-first"></span>
+							<span class="icon-bar icon-bar-two"></span>
+							<span class="icon-bar icon-bar-three"></span>
+						</button> 
+
+						<!-- MAIN Nav -->
+						<div class="nav-animation header-nav navbar-collapse collapse d-flex justify-content-center">
+
+							<ul class=" nav navbar-nav">
+								<li class="has-child current-menu-item"><a href="javascript:;" style="font-weight: bold">主页</a>
+									<ul class="sub-menu">
+										<li><a href="index.html">主页 1</a></li>
+										<li><a href="index-2.html">主页 2</a></li>
+										<li><a href="index-3.html">主页 3</a></li>
+									</ul>
+								</li>
+								<li class="has-child"><a href="javascript:;" style="font-weight: bold">页面详情</a>
+									<ul class="sub-menu">
+										<li><a href="about-1.html">关于我们</a></li>
+										<li><a href="team-page.html">团队合作</a></li>
+										<li><a href="testimonials.html">客户评价</a></li>
+										<li><a href="our-service.html">关于服务</a></li>
+										<li><a href="tour-list.html">旅游清单</a></li>
+										<li><a href="tour-list-left-sidebar.html">旅游清单侧栏</a></li>
+										<li><a href="tour-grid.html">旅游网</a></li>
+										<li><a href="tour-grid-sidebar.html">旅游网侧栏</a></li>
+										<li><a href="tour-sidebar-detail.html">旅游侧栏细节</a></li>
+										<li><a href="booking-form.html">机票预订</a></li>
+										<li><a href="faq.html">常见问题</a></li>
+									</ul> 
+								</li>
+								<li class="has-child"><a href="javascript:;" style="font-weight: bold">目的地</a>
+									<ul class="sub-menu">
+										<li><a href="destination-grid.html">Destinations Grid</a></li>
+										<li><a href="destination-detail.html">Destinations Detail</a></li>
+										<li><a href="destination-detail-sidebar.html">Destinations Detail Sidebar</a></li>                                        
+									</ul> 
+								</li>
+								<li class="has-child"><a href="javascript:;" style="font-weight: bold">博客</a>
+									<ul class="sub-menu">
+										<li><a href="blog-grid.html">Blog grid</a></li>
+										<li><a href="blog-grid-sidebar.html">Blog grid sidebar</a></li>                                         
+										<li><a href="blog-single.html">Blog Single</a></li>                                        
+									</ul>                                
+								</li>
+								<li><a href="contact.html" style="font-weight: bold">联系我们</a></li>
+							</ul>
+
+						</div>
+
+						<!-- Header Right Section-->
+						<div class="extra-nav header-2-nav">
+							<div class="extra-cell">
+
+								<!--Add Listing up-->                                
+								<div class="login-sign-btn">
+									<a href="#"><i class="feather-user"></i> 登录</a>
+									<span>/</span>
+									<a href="#">注册</a>
+								</div> 
+								<!--Sign up-->
+								<div class="site-search-btn">
+									<a href="#" class="site-button aon-btn-search" >
+										<i class="flaticon-020-search-1"></i>
+									</a>
+									<!-- SITE Search -->
+									<div id="search"> 
+										<span class="aon-seach-close"></span>
+										<form role="search" id="searchform" action="/search" method="get" class="radius-xl">
+											<input class="form-control" value="" name="q" type="search" placeholder="Type to search">
+											<span class="input-group-append">
+												<button type="button" class="search-btn">
+													<i class="feather-search"></i>
+												</button>
+											</span>
+										</form>
+									</div> 
+								</div>
+							</div>
+						</div>                            
+					</div>    
+
+				</div>
+			</div>
+		</header>
+		<!-- HEADER END -->
+    
+        <!-- CONTENT START -->
+        <div class="page-content">
+ 
+			<!-- SLIDER START --> 
+			<div class="aon-banner1-area">
+				<div class="aon-banner1-wrap">
+					
+					<div class="owl-carousel aon-bnr1-carousal">
+						<!--block 1-->
+						<div class="item">
+							<div class="bnr-bnr1-wrap" style="background:url(https://img0.baidu.com/it/u=2859093388,1696277009&fm=253&fmt=auto&app=138&f=JPEG?w=750&h=500) no-repeat 50% 0;background-size: cover">
+								<div class="aon-banner1-content">
+									<div class="aon-bnr1-col1">Discover</div>
+									<div class="aon-bnr1-col2">Tours.</div>
+									<div class="aon-bnr1-col3">
+										<input id="btn1" type="button" style="width: 200px" class="site-button" value="查&nbsp;询"/>
+										<div class="video-play-btn-banner-wrap white m-l30">
+											<div class="video-play-btn-banner">
+												<a class="mfp-video" href="https://www.bilibili.com/video/BV1yA411q7gQ?t=4.8"><i class="fa fa-play"></i></a>
+												<!--<div class="vid-text">See Video</div>-->
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="bnr-bnr1-overlay"></div>
+							</div>
+						</div>
+						<!--block 2-->
+						<div class="item">
+							<div class="bnr-bnr1-wrap" style="background-image:url(../page/images/slide-home/banner-bg1.jpg)">
+								<div class="aon-banner1-content">
+									<div class="aon-bnr1-col1">Discover</div>
+									<div class="aon-bnr1-col2">Tours.</div>
+									<div class="aon-bnr1-col3">
+										<a class="site-button" href="javascript:;">查询 <i class="feather-chevron-right"></i></a>
+										<div class="video-play-btn-banner-wrap white m-l30">
+											<div class="video-play-btn-banner">
+												<a class="mfp-video" href="https://www.bilibili.com/video/BV1yA411q7gQ?t=4.8"><i class="fa fa-play"></i></a>
+												<!--<div class="vid-text">See Video</div>-->
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="bnr-bnr1-overlay"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- SLIDER END -->
+
+			<!-- Search Area Section -->
+			<!--<div class="aon-search-area p-t110 p-b120">-->
+			<!--	<div class="container">-->
+			<!--		&lt;!&ndash;<div class="aon-search1-bar-wrap">&ndash;&gt;-->
+			<!--		&lt;!&ndash;	<div class="aon-search1-bar1-row">&ndash;&gt;-->
+			<!--		&lt;!&ndash;		<div class="aon-search1-bar1-col searh-bar-col-1">&ndash;&gt;-->
+			<!--		&lt;!&ndash;			<label>Destination</label>&ndash;&gt;-->
+			<!--		&lt;!&ndash;			<div class="aon-inputicon-box">&ndash;&gt;-->
+			<!--		&lt;!&ndash;				<select class="form-select" aria-label="Default select example">&ndash;&gt;-->
+			<!--		&lt;!&ndash;					<option>Destination</option>&ndash;&gt;-->
+			<!--		&lt;!&ndash;					<option>India</option>&ndash;&gt;-->
+			<!--		&lt;!&ndash;					<option>Japan</option>&ndash;&gt;-->
+			<!--		&lt;!&ndash;					<option>US</option>&ndash;&gt;-->
+			<!--		&lt;!&ndash;				  </select>&ndash;&gt;-->
+			<!--		&lt;!&ndash;				<i class="aon-text-gradi aon-input-icon feather-map-pin"></i>&ndash;&gt;-->
+			<!--		&lt;!&ndash;			</div>&ndash;&gt;-->
+			<!--		&lt;!&ndash;		</div>&ndash;&gt;-->
+			<!--				<div class="aon-search1-bar1-col searh-bar-col-2">-->
+			<!--					<label>Check In</label>-->
+			<!--					<input type="text" name="fullname" placeholder="DD/MM/YY" class="form-control form-no-bg datepicker" required="">-->
+			<!--				</div>-->
+			<!--				<div class="aon-search1-bar1-col searh-bar-col-3">-->
+			<!--					<label>Check Out</label>-->
+			<!--					<input type="text" name="fullname" placeholder="DD/MM/YY" class="form-control form-no-bg datepicker" required="">-->
+			<!--				</div>-->
+			<!--				<div class="aon-search1-bar1-col searh-bar-col-4">-->
+			<!--					<label>Adult</label>-->
+			<!--					<select class="form-select form-no-bg" aria-label="Default select example">-->
+			<!--						<option>01</option>-->
+			<!--						<option>02</option>-->
+			<!--						<option>03</option>-->
+			<!--						<option>04</option>-->
+			<!--					</select>-->
+			<!--				</div>-->
+			<!--				<div class="aon-search1-bar1-col searh-bar-col-5">-->
+			<!--					<label>Children</label>-->
+			<!--					<select class="form-select form-no-bg" aria-label="Default select example">-->
+			<!--						<option>01</option>-->
+			<!--						<option>02</option>-->
+			<!--						<option>03</option>-->
+			<!--						<option>04</option>-->
+			<!--					  </select>-->
+			<!--				</div>-->
+			<!--				<div class="aon-search1-bar1-col">-->
+			<!--					<button type="submit" class="site-button site-button-search"><i class="feather-search"></i></button>-->
+			<!--				</div>-->
+			<!--			</div>	-->
+			<!--		</div>-->
+			<!--	</div>-->
+			<!--</div>-->
+			<!-- Search Area Section End -->
+
+			 <!-- About Section -->
+			<div class="aon-aboutus-area aon-bg-white p-t120 p-b90">
+				<div class="container">
+					<div class="section-content">
+						<div class="aon-aboutus-section">
+							<div class="aon-aboutus-top">
+								<div class="row align-items-center">
+									<!-- Column 1 -->
+									<div class="col-lg-6 wow fadeInDown" data-wow-duration="1000ms">
+										<div class="aon-aboutus-left">
+											<div class="aon-pro-pic1">
+												<img src="../page/images/about-left.png" alt="Image">
+											</div>
+										</div>
+									</div>
+									<!-- Column 2 -->
+									<div class="col-lg-6 wow fadeInDown" data-wow-duration="2000ms">
+										<div class="aon-aboutus-right">
+											<span class="aon-sub-title">Have A Nice Day!</span>
+											<h2 class="aon-pro-title aon-sub-title-large">一起探索旅程吧.</h2>
+											<div class="aon-aboutus-text m-b50">
+												<p>本网站你可以了解到航班信息、旅游指南、酒店预订和出行服务等一系列攻略大全</p>
+											</div>
+											<div class="row">
+											<div class="row">
+												<div class="col-lg-4 col-md-4 col-sm-4 col-4 m-b30">
+													<div class="aon-abo-box">
+														<div class="aon-abo-icon aon-text-gradi">
+															<i class="flaticon-001-drive abo-icon"></i>
+														</div>
+														<h6 class="aon-pro-title2">出租汽车</h6>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-4 col-sm-4 col-4 m-b30">
+													<div class="aon-abo-box">
+														<div class="aon-abo-icon aon-text-gradi">
+															<i class="flaticon-004-airplane abo-icon"></i>
+														</div>
+														<h6 class="aon-pro-title2">专机服务</h6>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-4 col-sm-4 col-4 m-b30">
+													<div class="aon-abo-box">
+														<div class="aon-abo-icon aon-text-gradi">
+															<i class="flaticon-009-helicopter abo-icon"></i>
+														</div>
+														<h6 class="aon-pro-title2">直升专机</h6>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="aon-aboutus-bot">
+								<div class="row align-items-center justify-content-center  wow fadeInDown" data-wow-duration="1500ms">
+									<!-- Column 1 -->
+									<div class="mb-4 col-lg-2 col-md-3 col-sm-4 col-6 text-center">
+										<div class="site-clent-logo">
+											<img src="../page/images/client-logo/logo1.png" alt="Image">
+										</div>
+									</div>
+									<!-- Column 2 -->
+									<div class="mb-4 col-lg-2 col-md-3 col-sm-4 col-6 text-center">
+										<div class="site-clent-logo">
+											<img src="../page/images/client-logo/logo2.png" alt="Image">
+										</div>
+									</div>
+									<!-- Column 3 -->
+									<div class="mb-4 col-lg-2 col-md-3 col-sm-4 col-6 text-center">
+										<div class="site-clent-logo">
+											<img src="../page/images/client-logo/logo3.png" alt="Image">
+										</div>
+									</div>
+									<!-- Column 4 -->
+									<div class="mb-4 col-lg-2 col-md-3 col-sm-4 col-6 text-center">
+										<div class="site-clent-logo">
+											<img src="../page/images/client-logo/logo4.png" alt="Image">
+										</div>
+									</div>
+									<!-- Column 5 -->
+									<div class="mb-4 col-lg-2 col-md-3 col-sm-4 col-6 text-center">
+										<div class="site-clent-logo">
+											<img src="../page/images/client-logo/logo5.png" alt="Image">
+										</div>
+									</div>
+									<!-- Column 6 -->
+									<div class="mb-4 col-lg-2 col-md-3 col-sm-4 col-6 text-center">
+										<div class="site-clent-logo">
+											<img src="../page/images/client-logo/logo6.png" alt="Image">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- About Section End -->
+
+			<!-- Exotic Places Section -->
+			<div class="aon-exotic-places aon-exo-plac-bg-img aon-bg-light-orange p-t120  p-b90">
+				<div class="aon-exotic-places-top">
+					<div class="container aon-container-large">
+						<!--Title Section Start-->
+						<div class="section-head">
+							<h2 class="aon-title">走进异国他乡，感受异域风情</h2>
+						</div>
+						<!--Section End-->
+
+						<!--Section Content Start-->
+						<div class="section-content">
+							<div class="owl-carousel exotic-places-slide owl-btn-top-right">
+								<!--block 1-->
+								<div class="item">
+									<div class="aon-latest-new-one wow fadeInDown" data-wow-duration="1000ms">
+										<div class="exotic-places-box shine-hover">
+											<div class="exotic-places-pic shine-box"> 
+												<a href="destination-detail-sidebar.html"><img src="../page/images/place/pic1.png" alt="Image"></a>
+											</div>
+											<div class="exotic-places-info"> 
+												<h4 class="exotic-places-title">Island's of the sea</h4>
+												<span class="exotic-places-address"><i class="feather-map-pin"></i> Thailand</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!--block 2-->
+								<div class="item">
+									<div class="aon-latest-new-one wow fadeInDown" data-wow-duration="1000ms">
+										<div class="exotic-places-box shine-hover">
+											<div class="exotic-places-pic shine-box"> 
+												<a href="destination-detail-sidebar.html"><img src="../page/images/place/pic2.png" alt="Image"></a>
+											</div>
+											<div class="exotic-places-info"> 
+												<h4 class="exotic-places-title">Island's of the sea</h4>
+												<span class="exotic-places-address"><i class="feather-map-pin"></i> Thailand</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!--block 3-->
+								<div class="item">
+									<div class="aon-latest-new-one wow fadeInDown" data-wow-duration="1000ms">
+										<div class="exotic-places-box shine-hover">
+											<div class="exotic-places-pic shine-box"> 
+												<a href="destination-detail-sidebar.html"><img src="../page/images/place/pic3.png" alt="Image"></a>
+											</div>
+											<div class="exotic-places-info"> 
+												<h4 class="exotic-places-title">Island's of the sea</h4>
+												<span class="exotic-places-address"><i class="feather-map-pin"></i> Thailand</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!--block 4-->
+								<div class="item">
+									<div class="aon-latest-new-one wow fadeInDown" data-wow-duration="1000ms">
+										<div class="exotic-places-box shine-hover">
+											<div class="exotic-places-pic shine-box"> 
+												<a href="destination-detail-sidebar.html"><img src="../page/images/place/pic1.png" alt="Image"></a>
+											</div>
+											<div class="exotic-places-info"> 
+												<h4 class="exotic-places-title">Island's of the sea</h4>
+												<span class="exotic-places-address"><i class="feather-map-pin"></i> Thailand</span>
+											</div>
+										</div>
+									</div>
+								</div>                        
+							</div>
+						</div>
+						<!--Section Content End-->
+					</div>
+				</div>		
+				<div class="aon-exotic-places-bot">	
+					<div class="container">
+						<!--Section Content Start-->
+						<div class="section-content">
+							<div class="row d-flex justify-content-center">
+								<!--block 1-->
+								<div class="col-lg-4 col-md-6 aon-why-choo-col m-b30">
+								  <div class="aon-why-choo-box aon-icon-effect wow fadeInDown" data-wow-duration="1000ms">
+										<div class="aon-why-choo-icon aon-wc-bg-orange"> 
+											<i class="flaticon-034-home-1 aon-icon"></i>
+										</div>
+										<div class="aon-why-choo-info"> 
+											<h4 class="aon-why-choo-title">顶级酒店</h4>
+										</div>
+									</div>
+								</div>
+								<!--block 2-->
+								<div class="col-lg-4 col-md-6 aon-why-choo-col m-b30">
+									<div class="aon-why-choo-box aon-icon-effect wow fadeInDown" data-wow-duration="1000ms">
+										<div class="aon-why-choo-icon aon-wc-bg-green"> 
+											<i class="flaticon-009-helicopter aon-icon"></i>
+										</div>
+										<div class="aon-why-choo-info"> 
+											<h4 class="aon-why-choo-title">世界级别的旅行</h4>
+										</div>
+									</div>
+								</div>
+								<!--block 3-->
+								<div class="col-lg-4 col-md-6 aon-why-choo-col m-b30">
+									<div class="aon-why-choo-box aon-icon-effect wow fadeInDown" data-wow-duration="1000ms">
+										<div class="aon-why-choo-icon aon-wc-bg-blue"> 
+											<i class="flaticon-037-price-tag aon-icon"></i>
+										</div>
+										<div class="aon-why-choo-info"> 
+											<h4 class="aon-why-choo-title">最优的价格保障</h4>
+										</div>
+									</div>
+								</div>						
+							</div>
+						</div>
+						<!--Section Content End-->
+					</div>
+				</div>		
+			</div>
+			<!-- Exotic Places End --> 
+
+			<!-- Explore Popular Tours -->
+			<!--<div class="aon-polular-tours-area p-t120  p-b120">-->
+			<!--	<div class="container">-->
+			<!--		&lt;!&ndash;Title Section Start&ndash;&gt;-->
+			<!--		<div class="section-head center">-->
+			<!--			<h2 class="aon-title">Explore Popular Tours</h2>-->
+			<!--			<p>There are many variations of passages of Lorem Ipsum available, but.</p>-->
+			<!--		</div>-->
+			<!--		&lt;!&ndash;Section End&ndash;&gt;-->
+
+			<!--		&lt;!&ndash;Section Content Start&ndash;&gt;-->
+			<!--		<div class="section-content">-->
+			<!--			<div class="owl-carousel popular-tours-slide aon-owl-arrow">-->
+			<!--				&lt;!&ndash;block 1&ndash;&gt;-->
+			<!--				<div class="item">-->
+			<!--					<div class="aon-polular-tours-col wow fadeInDown" data-wow-duration="1000ms">-->
+			<!--						<div class="aon-polular-tours-box shine-hover">-->
+			<!--							<div class="aon-polular-tours-pic shine-box"> -->
+			<!--								<img src="images/tour/pic1.png" alt="Image">-->
+			<!--							</div>-->
+			<!--							<div class="aon-polular-tours-info"> -->
+			<!--								<h6 class="aon-polular-tours-title"><a href="tour-sidebar-detail.html">Dhaka to Cox's Bazar Tour with Air Ticket.</a></h6>-->
+			<!--								<div class="aon-polular-tours-price"><span>€590</span> /€690 Per Person</div>-->
+			<!--								<div class="aon-polular-tours-time">3 Day, 2 Night</div>-->
+			<!--							</div>-->
+			<!--						</div>-->
+			<!--					</div>-->
+			<!--				</div>-->
+			<!--				&lt;!&ndash;block 2&ndash;&gt;-->
+			<!--				<div class="item">-->
+			<!--					<div class="aon-polular-tours-col wow fadeInDown" data-wow-duration="1000ms">-->
+			<!--						<div class="aon-polular-tours-box shine-hover">-->
+			<!--							<div class="aon-polular-tours-pic shine-box"> -->
+			<!--								<img src="images/tour/pic2.png" alt="Image">-->
+			<!--							</div>-->
+			<!--							<div class="aon-polular-tours-info"> -->
+			<!--								<h6 class="aon-polular-tours-title"><a href="tour-sidebar-detail.html">Dhaka to Cox's Bazar Tour with Air Ticket.</a></h6>-->
+			<!--								<div class="aon-polular-tours-price"><span>€590</span> /€690 Per Person</div>-->
+			<!--								<div class="aon-polular-tours-time">3 Day, 2 Night</div>-->
+			<!--							</div>-->
+			<!--						</div>-->
+			<!--					</div>-->
+			<!--				</div>-->
+			<!--				&lt;!&ndash;block 3&ndash;&gt;-->
+			<!--				<div class="item">-->
+			<!--					<div class="aon-polular-tours-col wow fadeInDown" data-wow-duration="1000ms">-->
+			<!--						<div class="aon-polular-tours-box shine-hover">-->
+			<!--							<div class="aon-polular-tours-pic shine-box"> -->
+			<!--								<img src="images/tour/pic3.png" alt="Image">-->
+			<!--							</div>-->
+			<!--							<div class="aon-polular-tours-info"> -->
+			<!--								<h6 class="aon-polular-tours-title"><a href="tour-sidebar-detail.html">Dhaka to Cox's Bazar Tour with Air Ticket.</a></h6>-->
+			<!--								<div class="aon-polular-tours-price"><span>€590</span> /€690 Per Person</div>-->
+			<!--								<div class="aon-polular-tours-time">3 Day, 2 Night</div>-->
+			<!--							</div>-->
+			<!--						</div>-->
+			<!--					</div>-->
+			<!--				</div>-->
+			<!--				&lt;!&ndash;block 4&ndash;&gt;-->
+			<!--				<div class="item">-->
+			<!--					<div class="aon-polular-tours-col wow fadeInDown" data-wow-duration="1000ms">-->
+			<!--						<div class="aon-polular-tours-box shine-hover">-->
+			<!--							<div class="aon-polular-tours-pic shine-box"> -->
+			<!--								<img src="images/tour/pic4.png" alt="Image">-->
+			<!--							</div>-->
+			<!--							<div class="aon-polular-tours-info"> -->
+			<!--								<h6 class="aon-polular-tours-title"><a href="tour-sidebar-detail.html">Dhaka to Cox's Bazar Tour with Air Ticket.</a></h6>-->
+			<!--								<div class="aon-polular-tours-price"><span>€590</span> /€690 Per Person</div>-->
+			<!--								<div class="aon-polular-tours-time">3 Day, 2 Night</div>-->
+			<!--							</div>-->
+			<!--						</div>-->
+			<!--					</div>-->
+			<!--				</div>-->
+			<!--				&lt;!&ndash;block 1&ndash;&gt;-->
+			<!--				<div class="item">-->
+			<!--					<div class="aon-polular-tours-col wow fadeInDown" data-wow-duration="1000ms">-->
+			<!--						<div class="aon-polular-tours-box shine-hover">-->
+			<!--							<div class="aon-polular-tours-pic shine-box"> -->
+			<!--								<img src="images/tour/pic1.png" alt="Image">-->
+			<!--							</div>-->
+			<!--							<div class="aon-polular-tours-info"> -->
+			<!--								<h6 class="aon-polular-tours-title"><a href="tour-sidebar-detail.html">Dhaka to Cox's Bazar Tour with Air Ticket.</a></h6>-->
+			<!--								<div class="aon-polular-tours-price"><span>€590</span> /€690 Per Person</div>-->
+			<!--								<div class="aon-polular-tours-time">3 Day, 2 Night</div>-->
+			<!--							</div>-->
+			<!--						</div>-->
+			<!--					</div>-->
+			<!--				</div>-->
+			<!--				&lt;!&ndash;block 2&ndash;&gt;-->
+			<!--				<div class="item">-->
+			<!--					<div class="aon-polular-tours-col wow fadeInDown" data-wow-duration="1000ms">-->
+			<!--						<div class="aon-polular-tours-box shine-hover">-->
+			<!--							<div class="aon-polular-tours-pic shine-box"> -->
+			<!--								<img src="images/tour/pic2.png" alt="Image">-->
+			<!--							</div>-->
+			<!--							<div class="aon-polular-tours-info"> -->
+			<!--								<h6 class="aon-polular-tours-title"><a href="tour-sidebar-detail.html">Dhaka to Cox's Bazar Tour with Air Ticket.</a></h6>-->
+			<!--								<div class="aon-polular-tours-price"><span>€590</span> /€690 Per Person</div>-->
+			<!--								<div class="aon-polular-tours-time">3 Day, 2 Night</div>-->
+			<!--							</div>-->
+			<!--						</div>-->
+			<!--					</div>-->
+			<!--				</div>-->
+			<!--				&lt;!&ndash;block 3&ndash;&gt;-->
+			<!--				<div class="item">-->
+			<!--					<div class="aon-polular-tours-col wow fadeInDown" data-wow-duration="1000ms">-->
+			<!--						<div class="aon-polular-tours-box shine-hover">-->
+			<!--							<div class="aon-polular-tours-pic shine-box"> -->
+			<!--								<img src="images/tour/pic3.png" alt="Image">-->
+			<!--							</div>-->
+			<!--							<div class="aon-polular-tours-info"> -->
+			<!--								<h6 class="aon-polular-tours-title"><a href="tour-sidebar-detail.html">Dhaka to Cox's Bazar Tour with Air Ticket.</a></h6>-->
+			<!--								<div class="aon-polular-tours-price"><span>€590</span> /€690 Per Person</div>-->
+			<!--								<div class="aon-polular-tours-time">3 Day, 2 Night</div>-->
+			<!--							</div>-->
+			<!--						</div>-->
+			<!--					</div>-->
+			<!--				</div>-->
+			<!--				&lt;!&ndash;block 4&ndash;&gt;-->
+			<!--				<div class="item">-->
+			<!--					<div class="aon-polular-tours-col wow fadeInDown" data-wow-duration="1000ms">-->
+			<!--						<div class="aon-polular-tours-box shine-hover">-->
+			<!--							<div class="aon-polular-tours-pic shine-box"> -->
+			<!--								<img src="images/tour/pic4.png" alt="Image">-->
+			<!--							</div>-->
+			<!--							<div class="aon-polular-tours-info"> -->
+			<!--								<h6 class="aon-polular-tours-title"><a href="tour-sidebar-detail.html">Dhaka to Cox's Bazar Tour with Air Ticket.</a></h6>-->
+			<!--								<div class="aon-polular-tours-price"><span>€590</span> /€690 Per Person</div>-->
+			<!--								<div class="aon-polular-tours-time">3 Day, 2 Night</div>-->
+			<!--							</div>-->
+			<!--						</div>-->
+			<!--					</div>-->
+			<!--				</div>						-->
+			<!--			</div>-->
+			<!--		</div>-->
+			<!--		&lt;!&ndash;Section Content End&ndash;&gt;-->
+			<!--	</div>-->
+			<!--</div>-->
+			<!-- Explore Popular Tours End --> 			
+
+			<!-- Facilities Section -->
+			<div class="aon-facilities-area" style="background-image: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fsafe-img.xhscdn.com%2Fbw1%2F6eaf15d7-ec06-4c35-92c3-9238c4712772%3FimageView2%2F2%2Fw%2F1080%2Fformat%2Fjpg&refer=http%3A%2F%2Fsafe-img.xhscdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1681955838&t=47cf3c8dda1f11975b7d9a48f0e54c68)">
+				<div class="aon-overlay-area"></div>
+				<div class="container">
+
+					<div class="section-content">
+						<div class="aon-facilities-top-area">
+							<div class="row">
+								<div class="col-lg-6 col-md-6">
+									<div class="play-now-statice">
+										<a href="https://www.youtube.com/watch?v=c1XNqw2gSbU" class="mfp-video play-now-video play-now-statice">
+											<i class="icon fa fa-play bg-gradient-one"></i>
+											<span class="ripple"></span>
+										</a>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6">
+									<div class="aon-facilities-video-info">
+										超过 <span>230,000+ </span> 的客户已经正在使用
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="aon-facilities-bottom-area">
+							<div class="row">
+								<div class="col-lg-6 col-md-12">
+									<div class="owl-carousel video-title-slider aon-owl-arrow owl-dot-left">
+
+										<!-- COLUMNS 1 -->
+										<div class="item">
+											<div class="aon-facilities-vid-title">
+												<h2>
+													航班延误率预测系统
+												</h2>
+											</div>
+										</div>
+										<!-- COLUMNS 2 -->
+										<div class="item">
+											<div class="aon-facilities-vid-title">
+												<h2>
+													提供精确的航班出行体验.
+												</h2>
+											</div>
+										</div>
+
+									</div>
+
+								</div>
+								<div class="col-lg-6 col-md-12">
+
+									<div class="aon-facilities-blocks-wrap">
+										<div class="row">
+
+											<div class="col-lg-6 col-md-6">
+												<div class="aon-facilities-blocks gradi-1 aon-icon-effect">
+													<div class="aon-fac-icon">
+														<i class="flaticon-007-air-plane aon-icon"></i>
+													</div>
+													<h4 class="aon-title">飞机出行</h4>
+												</div>
+											</div>
+
+											<div class="col-lg-6 col-md-6">
+												<div class="aon-facilities-blocks gradi-2 aon-icon-effect">
+													<div class="aon-fac-icon">
+														<i class="flaticon-043-building aon-icon"></i>
+													</div>	
+													<h4 class="aon-title">酒店预订</h4>
+												</div>
+											</div>
+
+											<div class="col-lg-6 col-md-6">
+												<div class="aon-facilities-blocks gradi-3 aon-icon-effect">
+													<div class="aon-fac-icon">
+														<i class="flaticon-003-car-1 aon-icon"></i>
+													</div>	
+													<h4 class="aon-title">专车服务</h4>
+												</div>
+											</div>
+
+											<div class="col-lg-6 col-md-6">
+												<div class="aon-facilities-blocks gradi-4 aon-icon-effect">
+													<div class="aon-fac-icon">
+														<i class="flaticon-047-champagne-glass aon-icon"></i>
+													</div>
+													<h4 class="aon-title">餐饮推荐</h4>
+												</div>
+											</div>
+
+										</div>
+
+									</div>
+
+								</div>
+
+						</div>
+					</div>
+					</div>
+				</div>
+			</div>
+			<!-- Facilities gallery Section End -->
+
+			<!-- Testimonials -->
+			<!--<div class="aon-testmo-area aon-bg-white p-t100 p-b120">-->
+			<!--	<div class="container">-->
+
+			<!--		&lt;!&ndash;Title Section Start&ndash;&gt;-->
+			<!--		<div class="section-head center">-->
+			<!--			<h2 class="aon-title">What client Says?</h2>-->
+			<!--			<p>There are many variations of passages of Lorem Ipsum available.</p>-->
+			<!--		</div>-->
+			<!--		&lt;!&ndash;Title Section End&ndash;&gt;-->
+
+			<!--		<div class="section-content">-->
+			<!--			<div class="owl-carousel aon-testi-two-carousel aon-owl-arrow">-->
+
+			<!--					&lt;!&ndash; COLUMNS 1 &ndash;&gt;-->
+			<!--					<div class="item">-->
+			<!--						<div class="aon-testmo-wrap wow fadeInDown" data-wow-duration="2000ms">-->
+			<!--							<div class="aon-testmo-pic"><img src="images/testimonials/img1.png" alt="Image"></div>-->
+			<!--							<div class="aon-testmo-text">Nam eu bibendum nulla. Cras faucibus neque a lacus sollicitudin imperdiet. Pellent faucibus diam sit amet justo mattis, -->
+			<!--								vitae tincidunt leo lacinia.</div>-->
+			<!--							<div class="aon-testmo-rating">-->
+			<!--								<span class="fa fa-star"></span>-->
+			<!--								<span class="fa fa-star"></span>-->
+			<!--								<span class="fa fa-star"></span>-->
+			<!--								<span class="fa fa-star"></span>-->
+			<!--								<span class="fa fa-star"></span>-->
+			<!--							</div>-->
+			<!--							<div class="aon-testmo-name">Bardem Smith</div>-->
+			<!--						</div>-->
+			<!--					</div>-->
+			<!--					&lt;!&ndash; COLUMNS 2 &ndash;&gt;-->
+			<!--					<div class="item">-->
+			<!--						<div class="aon-testmo-wrap wow fadeInDown" data-wow-duration="2000ms">-->
+			<!--							<div class="aon-testmo-pic"><img src="images/testimonials/img2.png" alt="Image"></div>-->
+			<!--							<div class="aon-testmo-text">Nam eu bibendum nulla. Cras faucibus neque a lacus sollicitudin imperdiet. Pellent faucibus diam sit amet justo mattis, -->
+			<!--								vitae tincidunt leo lacinia.</div>-->
+			<!--							<div class="aon-testmo-rating">-->
+			<!--								<span class="fa fa-star"></span>-->
+			<!--								<span class="fa fa-star"></span>-->
+			<!--								<span class="fa fa-star"></span>-->
+			<!--								<span class="fa fa-star"></span>-->
+			<!--								<span class="fa fa-star"></span>-->
+			<!--							</div>-->
+			<!--							<div class="aon-testmo-name">Kutubul Alam</div>-->
+			<!--						</div>-->
+			<!--					</div>-->
+			<!--					&lt;!&ndash; COLUMNS 3 &ndash;&gt;-->
+			<!--					<div class="item">-->
+			<!--						<div class="aon-testmo-wrap wow fadeInDown" data-wow-duration="2000ms">-->
+			<!--							<div class="aon-testmo-pic"><img src="images/testimonials/img3.png" alt="Image"></div>-->
+			<!--							<div class="aon-testmo-text">Nam eu bibendum nulla. Cras faucibus neque a lacus sollicitudin imperdiet. Pellent faucibus diam sit amet justo mattis, -->
+			<!--								vitae tincidunt leo lacinia.</div>-->
+			<!--							<div class="aon-testmo-rating">-->
+			<!--								<span class="fa fa-star"></span>-->
+			<!--								<span class="fa fa-star"></span>-->
+			<!--								<span class="fa fa-star"></span>-->
+			<!--								<span class="fa fa-star"></span>-->
+			<!--								<span class="fa fa-star"></span>-->
+			<!--							</div>-->
+			<!--							<div class="aon-testmo-name">Mahin Khan</div>-->
+			<!--						</div>-->
+			<!--					</div>-->
+			<!--					&lt;!&ndash; COLUMNS 1 &ndash;&gt;-->
+			<!--					<div class="item">-->
+			<!--						<div class="aon-testmo-wrap wow fadeInDown" data-wow-duration="2000ms">-->
+			<!--							<div class="aon-testmo-pic"><img src="images/testimonials/img1.png" alt="Image"></div>-->
+			<!--							<div class="aon-testmo-text">Nam eu bibendum nulla. Cras faucibus neque a lacus sollicitudin imperdiet. Pellent faucibus diam sit amet justo mattis, -->
+			<!--								vitae tincidunt leo lacinia.</div>-->
+			<!--							<div class="aon-testmo-rating">-->
+			<!--								<span class="fa fa-star"></span>-->
+			<!--								<span class="fa fa-star"></span>-->
+			<!--								<span class="fa fa-star"></span>-->
+			<!--								<span class="fa fa-star"></span>-->
+			<!--								<span class="fa fa-star"></span>-->
+			<!--							</div>-->
+			<!--							<div class="aon-testmo-name">Bardem Smith</div>-->
+			<!--						</div>-->
+			<!--					</div>-->
+			<!--					&lt;!&ndash; COLUMNS 2 &ndash;&gt;-->
+			<!--					<div class="item">-->
+			<!--						<div class="aon-testmo-wrap wow fadeInDown" data-wow-duration="2000ms">-->
+			<!--							<div class="aon-testmo-pic"><img src="images/testimonials/img2.png" alt="Image"></div>-->
+			<!--							<div class="aon-testmo-text">Nam eu bibendum nulla. Cras faucibus neque a lacus sollicitudin imperdiet. Pellent faucibus diam sit amet justo mattis, -->
+			<!--								vitae tincidunt leo lacinia.</div>-->
+			<!--							<div class="aon-testmo-rating">-->
+			<!--								<span class="fa fa-star"></span>-->
+			<!--								<span class="fa fa-star"></span>-->
+			<!--								<span class="fa fa-star"></span>-->
+			<!--								<span class="fa fa-star"></span>-->
+			<!--								<span class="fa fa-star"></span>-->
+			<!--							</div>-->
+			<!--							<div class="aon-testmo-name">Kutubul Alam</div>-->
+			<!--						</div>-->
+			<!--					</div>-->
+			<!--					&lt;!&ndash; COLUMNS 3 &ndash;&gt;-->
+			<!--					<div class="item">-->
+			<!--						<div class="aon-testmo-wrap wow fadeInDown" data-wow-duration="2000ms">-->
+			<!--							<div class="aon-testmo-pic"><img src="images/testimonials/img3.png" alt="Image"></div>-->
+			<!--							<div class="aon-testmo-text">Nam eu bibendum nulla. Cras faucibus neque a lacus sollicitudin imperdiet. Pellent faucibus diam sit amet justo mattis, -->
+			<!--								vitae tincidunt leo lacinia.</div>-->
+			<!--							<div class="aon-testmo-rating">-->
+			<!--								<span class="fa fa-star"></span>-->
+			<!--								<span class="fa fa-star"></span>-->
+			<!--								<span class="fa fa-star"></span>-->
+			<!--								<span class="fa fa-star"></span>-->
+			<!--								<span class="fa fa-star"></span>-->
+			<!--							</div>-->
+			<!--							<div class="aon-testmo-name">Mahin Khan</div>-->
+			<!--						</div>-->
+			<!--					</div>               -->
+			<!--				</div>-->
+			<!--		</div>-->
+
+			<!--	</div>-->
+			<!--</div>-->
+			<!-- Testimonials End -->   			
+
+			<!-- Insta Gallery Section -->
+			<div class="aon-insta-area-2 bg-white p-b120">
+				<div class="container aon-container-large">
+					<div class="section-content">
+						<div class="aon-insta-gallery-wrap">
+							<div class="row d-flex justify-content-center">
+								<!-- COLUMNS 1 -->
+								<div class="aon-insta-box-1">
+									<div class="aon-insta-gallery-1 shine-hover  wow fadeInDown" data-wow-duration="2000ms">
+										<div class="aon-insta-pic-1 shine-box">
+											<img src="images/insta-gallery/pic1.png" alt="#">
+										</div>
+										<div class="aon-insta-info-1">
+											<a class="elem" href="images/insta-gallery/pic1.png" title="Nh-16 Highway Bridge" data-lcl-thumb="images/insta-gallery/pic1.png">
+												<i class="feather-instagram aon-text-gradi"></i>Instagram
+											</a>
+										</div>
+									</div>
+								</div>
+								<!-- COLUMNS 2 -->
+								<div class="aon-insta-box-1">
+									<div class="aon-insta-gallery-1 shine-hover  wow fadeInDown" data-wow-duration="2000ms">
+										<div class="aon-insta-pic-1 shine-box">
+											<img src="images/insta-gallery/pic2.png" alt="#">
+										</div>
+										<div class="aon-insta-info-1">
+											<a class="elem" href="images/insta-gallery/pic2.png" title="Nh-16 Highway Bridge" data-lcl-thumb="images/insta-gallery/pic2.png">
+												<i class="feather-instagram aon-text-gradi"></i>Instagram
+											</a>
+										</div>
+									</div>
+								</div>
+								<!-- COLUMNS 3 -->
+								<div class="aon-insta-box-1">
+									<div class="aon-insta-gallery-1 shine-hover  wow fadeInDown" data-wow-duration="2000ms">
+										<div class="aon-insta-pic-1 shine-box">
+											<img src="images/insta-gallery/pic3.png" alt="#">
+										</div>
+										<div class="aon-insta-info-1">
+											<a class="elem" href="images/insta-gallery/pic3.png" title="Nh-16 Highway Bridge" data-lcl-thumb="images/insta-gallery/pic3.png">
+												<i class="feather-instagram aon-text-gradi"></i>Instagram
+											</a>
+										</div>
+									</div>
+								</div>
+								<!-- COLUMNS 4 -->
+								<div class="aon-insta-box-1">
+									<div class="aon-insta-gallery-1 shine-hover  wow fadeInDown" data-wow-duration="2000ms">
+										<div class="aon-insta-pic-1 shine-box">
+											<img src="images/insta-gallery/pic4.png" alt="#">
+										</div>
+										<div class="aon-insta-info-1">
+											<a class="elem" href="images/insta-gallery/pic4.png" title="Nh-16 Highway Bridge" data-lcl-thumb="images/insta-gallery/pic4.png">
+												<i class="feather-instagram aon-text-gradi"></i>Instagram
+											</a>
+										</div>
+									</div>
+								</div>
+								<!-- COLUMNS 5 -->
+								<div class="aon-insta-box-1">
+									<div class="aon-insta-gallery-1 shine-hover  wow fadeInDown" data-wow-duration="2000ms">
+										<div class="aon-insta-pic-1 shine-box">
+											<img src="images/insta-gallery/pic5.png" alt="#">
+										</div>
+										<div class="aon-insta-info-1">
+											<a class="elem" href="images/insta-gallery/pic5.png" title="Nh-16 Highway Bridge" data-lcl-thumb="images/insta-gallery/pic5.png">
+												<i class="feather-instagram aon-text-gradi"></i>Instagram
+											</a>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Insta Gallery Section End -->
+
+			<!-- Blog Section -->
+			<!--<div class="aon-blog-area-2 aon-bg-light-orange p-t100  p-b150">-->
+			<!--	<div class="container">-->
+			<!--		<div class="section-content">-->
+			<!--			&lt;!&ndash;Title Section Start&ndash;&gt;-->
+			<!--			<div class="section-head left">-->
+			<!--				<h2 class="aon-title">Latest News & Blogs</h2>-->
+			<!--				<p>There are many variations of passages of Lorem Ipsum available.</p>-->
+			<!--			</div>-->
+			<!--			&lt;!&ndash;Title Section End&ndash;&gt;-->
+
+			<!--			<div class="aon-travel-blog-section">-->
+			<!--				<div class="owl-carousel aon-travel-slider aon-owl-arrow  owl-btn-top-right">-->
+
+			<!--					&lt;!&ndash; COLUMNS 1 &ndash;&gt;-->
+			<!--					<div class="item">-->
+			<!--						<div class="aon-farm-blog-2 shine-hover  wow fadeInDown m-b30" data-wow-duration="2000ms">-->
+			<!--							<div class="post-bx">-->
+
+			<!--								<div class="post-thum shine-box"> -->
+			<!--									<img title="title" alt="" src="images/blog/latest-blog/pic1.png">-->
+			<!--								</div>-->
+			<!--								<div class="post-info">-->
+
+			<!--									<div class="post-meta">-->
+			<!--										<ul>-->
+			<!--											<li class="post-author">-->
+			<!--												<i class="feather-user aon-text-gradient"></i>-->
+			<!--												<a href="blog-single.html">Creativemela</a>-->
+			<!--											</li>-->
+			<!--											<li class="post-comment">-->
+			<!--												<i class="feather-message-square aon-text-gradient"></i>-->
+			<!--												<a href="blog-single.html">02 Comments</a>-->
+			<!--											</li>-->
+			<!--										</ul>-->
+			<!--									</div>-->
+
+			<!--									<div class="post-text">-->
+			<!--										<h4 class="post-title">-->
+			<!--											<a href="blog-single.html">Domestic Violence in California -->
+			<!--												How a Lawyer Can Help.</a>-->
+			<!--										</h4>-->
+			<!--									</div>-->
+
+			<!--									<div class="aon-post-control">-->
+			<!--										<div class="aon-post-readmore">-->
+			<!--											<a class="site-button-1" href="blog-single.html" >Read More <i class="btn-arrow-icon feather-chevron-right"></i></a>-->
+			<!--										</div>-->
+
+			<!--										<div class="aon-post-date">-->
+			<!--											<span class="date-before-circle bg-gradient-one"></span>-->
+			<!--											<span class="date-dd">14</span>-->
+			<!--											<span class="date-mm">April</span>-->
+			<!--										</div>-->
+			<!--									</div>-->
+
+			<!--								</div>-->
+
+			<!--							</div>-->
+			<!--						</div>-->
+			<!--					</div>-->
+			<!--					&lt;!&ndash; COLUMNS 2 &ndash;&gt;-->
+			<!--					<div class="item">-->
+			<!--						<div class="aon-farm-blog-2 shine-hover  wow fadeInDown m-b30" data-wow-duration="2000ms">-->
+			<!--							<div class="post-bx">-->
+
+			<!--								<div class="post-thum shine-box"> -->
+			<!--									<img title="title" alt="" src="images/blog/latest-blog/pic2.png">-->
+			<!--								</div>-->
+			<!--								<div class="post-info">-->
+
+			<!--									<div class="post-meta">-->
+			<!--										<ul>-->
+			<!--											<li class="post-author">-->
+			<!--												<i class="feather-user aon-text-gradient"></i>-->
+			<!--												<a href="blog-single.html">Creativemela</a>-->
+			<!--											</li>-->
+			<!--											<li class="post-comment">-->
+			<!--												<i class="feather-message-square aon-text-gradient"></i>-->
+			<!--												<a href="blog-single.html">02 Comments</a>-->
+			<!--											</li>-->
+			<!--										</ul>-->
+			<!--									</div>-->
+
+			<!--									<div class="post-text">-->
+			<!--										<h4 class="post-title">-->
+			<!--											<a href="blog-single.html">Domestic Violence in California -->
+			<!--												How a Lawyer Can Help.</a>-->
+			<!--										</h4>-->
+			<!--									</div>-->
+
+			<!--									<div class="aon-post-control">-->
+			<!--										<div class="aon-post-readmore">-->
+			<!--											<a class="site-button-1" href="blog-single.html" >Read More <i class="btn-arrow-icon feather-chevron-right"></i></a>-->
+			<!--										</div>-->
+
+			<!--										<div class="aon-post-date">-->
+			<!--											<span class="date-before-circle bg-gradient-one"></span>-->
+			<!--											<span class="date-dd">14</span>-->
+			<!--											<span class="date-mm">April</span>-->
+			<!--										</div>-->
+			<!--									</div>-->
+
+			<!--								</div>-->
+
+			<!--							</div>-->
+			<!--						</div>-->
+			<!--					</div>-->
+			<!--					&lt;!&ndash; COLUMNS 3 &ndash;&gt;-->
+			<!--					<div class="item">-->
+			<!--						<div class="aon-farm-blog-2 shine-hover  wow fadeInDown m-b30" data-wow-duration="2000ms">-->
+			<!--							<div class="post-bx">-->
+
+			<!--								<div class="post-thum shine-box"> -->
+			<!--									<img title="title" alt="" src="images/blog/latest-blog/pic3.png">-->
+			<!--								</div>-->
+			<!--								<div class="post-info">-->
+
+			<!--									<div class="post-meta">-->
+			<!--										<ul>-->
+			<!--											<li class="post-author">-->
+			<!--												<i class="feather-user aon-text-gradient"></i>-->
+			<!--												<a href="blog-single.html">Creativemela</a>-->
+			<!--											</li>-->
+			<!--											<li class="post-comment">-->
+			<!--												<i class="feather-message-square aon-text-gradient"></i>-->
+			<!--												<a href="blog-single.html">02 Comments</a>-->
+			<!--											</li>-->
+			<!--										</ul>-->
+			<!--									</div>-->
+
+			<!--									<div class="post-text">-->
+			<!--										<h4 class="post-title">-->
+			<!--											<a href="blog-single.html">Domestic Violence in California -->
+			<!--												How a Lawyer Can Help.</a>-->
+			<!--										</h4>-->
+			<!--									</div>-->
+
+			<!--									<div class="aon-post-control">-->
+			<!--										<div class="aon-post-readmore">-->
+			<!--											<a class="site-button-1" href="blog-single.html" >Read More <i class="btn-arrow-icon feather-chevron-right"></i></a>-->
+			<!--										</div>-->
+
+			<!--										<div class="aon-post-date">-->
+			<!--											<span class="date-before-circle bg-gradient-one"></span>-->
+			<!--											<span class="date-dd">14</span>-->
+			<!--											<span class="date-mm">April</span>-->
+			<!--										</div>-->
+			<!--									</div>-->
+
+			<!--								</div>-->
+
+			<!--							</div>-->
+			<!--						</div>-->
+			<!--					</div>-->
+			<!--					&lt;!&ndash; COLUMNS 4 &ndash;&gt;-->
+			<!--					<div class="item">-->
+			<!--						<div class="aon-farm-blog-2 shine-hover  wow fadeInDown m-b30" data-wow-duration="2000ms">-->
+			<!--							<div class="post-bx">-->
+
+			<!--								<div class="post-thum shine-box"> -->
+			<!--									<img title="title" alt="" src="images/blog/latest-blog/pic2.png">-->
+			<!--								</div>-->
+			<!--								<div class="post-info">-->
+
+			<!--									<div class="post-meta">-->
+			<!--										<ul>-->
+			<!--											<li class="post-author">-->
+			<!--												<i class="feather-user aon-text-gradient"></i>-->
+			<!--												<a href="blog-single.html">Creativemela</a>-->
+			<!--											</li>-->
+			<!--											<li class="post-comment">-->
+			<!--												<i class="feather-message-square aon-text-gradient"></i>-->
+			<!--												<a href="blog-single.html">02 Comments</a>-->
+			<!--											</li>-->
+			<!--										</ul>-->
+			<!--									</div>-->
+
+			<!--									<div class="post-text">-->
+			<!--										<h4 class="post-title">-->
+			<!--											<a href="blog-single.html">Domestic Violence in California -->
+			<!--												How a Lawyer Can Help.</a>-->
+			<!--										</h4>-->
+			<!--									</div>-->
+
+			<!--									<div class="aon-post-control">-->
+			<!--										<div class="aon-post-readmore">-->
+			<!--											<a class="site-button-1" href="blog-single.html" >Read More <i class="btn-arrow-icon feather-chevron-right"></i></a>-->
+			<!--										</div>-->
+
+			<!--										<div class="aon-post-date">-->
+			<!--											<span class="date-before-circle bg-gradient-one"></span>-->
+			<!--											<span class="date-dd">14</span>-->
+			<!--											<span class="date-mm">April</span>-->
+			<!--										</div>-->
+			<!--									</div>-->
+
+			<!--								</div>-->
+
+			<!--							</div>-->
+			<!--						</div>-->
+			<!--					</div>-->
+
+			<!--				</div>-->
+			<!--			</div>-->
+
+
+			<!--		</div>-->
+			<!--	</div>-->
+			<!--</div>-->
+			<!-- Blog Section End -->
+            
+        <!--</div>-->
+        <!-- CONTENT END -->
+
+		<!-- FOOTER START -->
+		<footer class="site-footer" style="background-image: url(../page/images/bg/footer-bg.jpg)">
+			<div class="container">
+				<div class="aon-ftr-newsletter">
+					<div class="row">
+						<div class="col-lg-6 col-md-6">
+							<div class="ftr-nws-l-title"> 留下需要帮助的信息</div>
+
+						</div>
+						<div class="col-lg-6 col-md-6">
+							<form>
+								<div class="aon-news-form-2">
+									<input type="text" class="form-control" placeholder="Enter Your Email...">
+									<button type="submit" class="aon-news-btn-2 gradi-1"><i class="feather-corner-down-left"></i></button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- FOOTER BLOCKES START -->  
+			<div class="footer-top-2">
+				<div class="container">
+					<div class="row">
+						<!-- COLUMNS 1 -->
+						<div class="col-lg-3 col-md-6">
+							<div class="sf-widget-link f-margin">
+								<div class="aon-footer-logo-2"><img src="../page/images/bg/ftr-logo.png" alt="Image"></div>
+								<div class="aon-footer-text-2">
+									页脚可以了解到更详细的信息和资料
+								</div>
+								<ul class="aon-social-icon-2 d-flex">
+									<li><a href="javascript:void(0);"><i class="feather-facebook"></i></a></li>
+									<li><a href="javascript:void(0);"><i class="feather-twitter"></i></a></li>
+									<li><a href="javascript:void(0);"><i class="feather-linkedin"></i></a></li>
+									<li><a href="javascript:void(0);"><i class="feather-instagram"></i></a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- COLUMNS 2 -->
+						<div class="col-lg-3 col-md-6 col-sm-6">
+							<div class="aon-widget-link f-margin f-top-margin">
+								<h4 class="aon-f-title-2">公司</h4>
+								<ul class="aon-widget-foo-list-2">
+									<li><a href="about-1.html">帮助中心</a></li>
+									<li><a href="about-1.html">举报</a></li>
+									<li><a href="about-1.html">网站地图</a></li>
+									<li><a href="about-1.html">航行知识库</a></li>
+									<li><a href="about-1.html">关于我们</a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- COLUMNS 3 -->
+						<div class="col-lg-3 col-md-6 col-sm-6">
+							<div class="aon-widget-link f-margin f-top-margin">
+								<h4 class="aon-f-title-2">资源</h4>
+								<ul class="aon-widget-foo-list-2">
+									<li><a href="about-1.html">公司资料</a></li>
+									<li><a href="contact.html">提交内容</a></li>
+									<li><a href="destination.html">资源材料</a></li>
+									<li><a href="about-1.html">系统设计</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<!-- COLUMNS 4 -->
+						<div class="col-lg-3 col-md-6">
+							<div class="aon-ftr-info-wrap  f-margin f-top-margin">
+								<ul class="aon-ftr-info">
+									<li>
+										<h4 class="aon-f-title-2">坐标</h4>
+										<p>北京, 上海, 广州.</p>
+									</li>
+									<li>
+										<h4 class="aon-f-title-2">邮箱</h4>
+										<p>info.flight@gmail.com</p>
+									</li>
+									<li>
+										<h4 class="aon-f-title-2">Phone</h4>
+										<a href="tel:+66 (555 999 222)" style="color:#706C83">+66 (555 999 222)</a>
+									</li>
+									<li>
+										<h4 class="aon-f-title-2">网页</h4>
+										<p class="hilite">info.flight@tranel.com</p>
+									</li>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- FOOTER COPYRIGHT -->
+			<div class="footer-bottom">
+				<div class="container">
+					<div class="aon-footer-bottom-area-2 gradi-1">
+						<div class="aon-footer-bottom-links">
+							<ul class="list-unstyled">
+								<li><a href="about-1.html">条款 & 条件</a></li>
+								<li><a href="about-1.html">隐私政策</a></li>
+								<li><a href="about-1.html">世界地图</a></li>
+								<li><a href="about-1.html">支持帮助</a></li>
+							</ul>
+						</div>
+						<div class="aon-foo-copyright-2">
+							©  2023 航班延误率 <a href="Http://www.bootstrapmb.com">预测平台</a>
+						</div>
+					</div>
+				</div>   
+			</div>
+
+			<!-- Footer Vverlay -->
+			<div class="footer-overlay"></div>
+
+		</footer>
+		<!-- FOOTER END -->     
+        
+        <!-- BUTTON TOP START -->
+		<button class="scroltop"><span class="fa fa-angle-up  relative" id="btn-vibrate"></span></button>	
+        		
+
+ 	</div>
+
+    
+    
+	<!-- JAVASCRIPT  FILES ========================================= -->
+	<script  th:src="@{page/js/jquery-3.6.1.min.js}"></script><!-- JQUERY.MIN JS -->
+	<script  th:src="@{page/js/popper.min.js}"></script><!-- POPPER.MIN JS -->
+	<script  th:src="@{page/js/bootstrap.min.js}"></script><!-- BOOTSTRAP.MIN JS -->
+	<script  th:src="@{page/js/wow.js}"></script><!-- WOW JS -->
+	<script  th:src="@{page/js/jquery.bootstrap-touchspin.js}"></script><!-- FORM JS -->
+	<script  th:src="@{page/js/magnific-popup.min.js}"></script><!-- MAGNIFIC-POPUP JS -->
+	<script  th:src="@{page/js/isotope.pkgd.min.js}"></script><!-- isotope-pkgd JS -->
+	<script  th:src="@{page/js/imagesloaded.pkgd.js}"></script><!-- isotope-pkgd JS -->
+	<script  th:src="@{page/js/waypoints.min.js}"></script><!-- WAYPOINTS JS -->
+	<script  th:src="@{page/js/counterup.min.js}"></script><!-- COUNTERUP JS -->
+	<script  th:src="@{page/js/waypoints-sticky.min.js}"></script><!-- STICKY HEADER -->
+	<script  th:src="@{page/js/owl.carousel.min.js}"></script><!-- OWL  SLIDER  -->
+	<script  th:src="@{page/js/theia-sticky-sidebar.js}"></script><!-- STICKY SIDEBAR  -->
+	<script  th:src="@{page/js/datepicker.min.js}"></script><!-- DATE PICKER  -->
+	<script  th:src="@{page/js/lc_lightbox.lite.js}" ></script><!-- IMAGE POPUP -->
+	<script  th:src="@{page/js/custom.js}"></script><!-- CUSTOM FUCTIONS  -->
+
+			<script>
+				$("#btn1").click(function (){
+					window.location.href="/detail"
+				})
+			</script>
+</body>
+
+</html>
+
+
+
+

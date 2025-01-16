@@ -1,0 +1,56 @@
+/*! variflight 最后发布于： 2017-10-30 */
+/*! variflight 最后发布于： 2017-08-29 */
+.ac_results {
+    padding: 0;
+    background-color: #fff;
+    overflow: hidden;
+    z-index: 99999;
+    margin-top: 2px
+}
+
+.ac_results ul {
+    width: 280px;
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+
+.ac_results li {
+    margin: 0;
+    padding: 2px 5px;
+    cursor: default;
+    display: block;
+    position: relative;
+    font: menu;
+    font-size: 12px;
+    line-height: 25px;
+    overflow: hidden
+}
+
+.ac_results li span {
+    font-size: 12px;
+    display: block;
+    float: left;
+    width: 80px
+}
+
+.ac_results li b {
+    font-size: 12px;
+    display: block;
+    float: left
+}
+
+.ac_results li span strong {
+    color: #000;
+    font-weight: bolder
+}
+
+li.ac_over span strong {
+    color: #fff;
+    font-weight: bolder
+}
+
+.ac_over {
+    background-color: #1e90ff;
+    color: #fff
+}

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.charles.flight.FlightApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.872 s - in com.charles.flight.FlightApplicationTests

@@ -1,0 +1,222 @@
+/*! variflight 最后发布于： 2017-10-30 */
+@charset "utf-8";/*! variflight 最后发布于： 2017-08-29 */
+.fy-main-wrap {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    min-width: 1200px
+}
+
+.fy-main-wrap1 {
+    background: url(../img/down/bg_layer.jpg) 0 0/100% 100% no-repeat #000
+}
+
+.fy-main-wrap .slogan {
+    position: absolute;
+    z-index: 3;
+    left: 50px;
+    top: 30px;
+    width: 10.8%
+}
+
+.fy-main-wrap .slogan img {
+    width: 100%
+}
+
+@media screen and (max-width: 1199px) {
+    .fy-main-wrap .slogan {
+        left:0
+    }
+}
+
+.downMian {
+    width: 30%;
+    overflow: hidden;
+    position: absolute;
+    left: 19%;
+    top: 24%
+}
+
+.right_hand {
+    width: 29%;
+    position: absolute;
+    right: 16%;
+    bottom: 0
+}
+
+.right_hand img {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    display: block;
+    width: 100%
+}
+
+.phoneOs {
+    float: left;
+    width: 45%
+}
+
+.phoneOs a {
+    display: block;
+    margin-top: 23%
+}
+
+.phoneOs a.android {
+    margin-top: 0
+}
+
+.downMianL {
+    padding-right: 16%
+}
+
+.downer {
+    float: right;
+    width: 45%
+}
+
+.downer img,.phoneOs a img {
+    width: 100%
+}
+
+.inputCOdeMain {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 5% 0 10%
+}
+
+.inputCOdeMain input {
+    width: 100%;
+    border: 0;
+    font-size: 1.2em;
+    height: 100%;
+    text-indent: 1em
+}
+
+.inputCOdeMain button {
+    background-color: #ff6262;
+    border: 0;
+    color: #fff;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1.4em;
+    cursor: pointer;
+    height: 100%;
+    padding: 0 7%
+}
+
+.mainWrap01,.mainWrap03,.mainWrap05 {
+    background-color: #fff;
+    color: #666
+}
+
+.mainWrap02,.mainWrap04 {
+    background-color: #6eb5ee;
+    color: #fff
+}
+
+.fy-main-wrap .fy_main {
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden
+}
+
+.fy-main-wrap .wrapph {
+    width: 274px;
+    height: 575px;
+    margin: 50px 275px 50px 50px;
+    float: left
+}
+
+.fy-main-wrap .wrap01 {
+    background: url(../img/down/01.png) no-repeat;
+    left: 16%
+}
+
+.fy-main-wrap .wrap02 {
+    background: url(../img/down/02.png) no-repeat;
+    right: 16%
+}
+
+.fy-main-wrap .wrap03 {
+    background: url(../img/down/03.png) no-repeat;
+    left: 16%
+}
+
+.fy-main-wrap .wrap04 {
+    background: url(../img/down/04.png) no-repeat;
+    right: 16%
+}
+
+.fy-main-wrap .wrap05 {
+    background: url(../img/down/05.png) no-repeat;
+    left: 16%
+}
+
+.wrapTM {
+    float: left;
+    margin-top: 300px
+}
+
+.mainWrap02 .wrapTM,.mainWrap04 .wrapTM {
+    float: right
+}
+
+.mainWrap02 .wrapph,.mainWrap04 .wrapph {
+    float: right;
+    margin: 50px 50px 50px 275px
+}
+
+.wrapTM .tft {
+    font-size: 47px;
+    padding-left: 68px;
+    height: 58px;
+    line-height: 58px;
+    font-weight: 700
+}
+
+.wrapTM .tft1 {
+    background: url(../img/down/icon01.png) no-repeat
+}
+
+.wrapTM .tft2 {
+    background: url(../img/down/icon02.png) no-repeat
+}
+
+.wrapTM .tft3 {
+    background: url(../img/down/icon03.png) no-repeat
+}
+
+.wrapTM .tft4 {
+    background: url(../img/down/icon04.png) no-repeat
+}
+
+.wrapTM .tft5 {
+    background: url(../img/down/icon05.png) no-repeat
+}
+
+.wrapTM .sfsr {
+    font-size: 25px;
+    margin-top: 24px
+}
+
+.wrapTM .sfsr p {
+    color: #999;
+    margin-bottom: 8px
+}
+
+.mainWrap02 .wrapTM .sfsr p,.mainWrap04 .wrapTM .sfsr p {
+    color: #fff
+}
+
+.public,.public img {
+    width: 100%
+}
+
+@media screen and (max-width: 1199px) and (min-width:1024px) {
+    .inputCOdeMain input {
+        font-size:1.2em
+    }
+}

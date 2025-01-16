@@ -1,0 +1,7 @@
+com\charles\flight\query\FlightQuery.class
+com\charles\flight\service\FlightService.class
+com\charles\flight\FlightApplication.class
+com\charles\flight\controller\DataController.class
+com\charles\flight\dao\FlightDao.class
+com\charles\flight\controller\IndexController.class
+com\charles\flight\domain\FlightInfo.class

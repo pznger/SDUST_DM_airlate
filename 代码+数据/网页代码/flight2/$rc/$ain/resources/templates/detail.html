@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="ucoHEaVHET"/>
+    <title>航班预测系统</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="CA111,CA111航班"/>
+    <meta name="baidu-site-verification" content="1Sfs5p7h72"/>
+    <meta name="360-site-verification" content="db5186c019ef79035320330aa2aa63ff"/>
+    <link rel="stylesheet" th:href="@{jquery.autocomplete.css}">
+    <link rel="stylesheet" th:href="@{widget_new.css}">
+    <link rel="stylesheet" th:href="@{index_new.css}">
+    <link rel="stylesheet" th:href="@{float.css}">
+    <link rel="stylesheet" th:href="@{datePicker.css}">
+    <link rel="stylesheet" th:href="@{ui-dialog.css}">
+    <link rel="stylesheet" th:href="@{personCenter.css}">
+    <link rel="stylesheet" th:href="@{downApp.css}">
+    <link rel="stylesheet" th:href="@{sundries.css}">
+    <link rel="stylesheet" th:href="@{aboutme.css}">
+    <link rel="stylesheet" th:href="@{base.css}">
+    <link rel="stylesheet" th:href="@{layer.css}">
+    <script type="text/javascript" th:src="@{jquery.js}"></script>
+    <script type="text/javascript" th:src="@{layer/layer.js}"></script>
+    <link rel="shortcut icon" href="http://www.variflight.com/_newstatic/dest/img/favicon.ico"/>
+    <script src="http://www.variflight.com/_newstatic/dest/js/jquery.min.js?v=4120ccfc56e7f1ecf04823ab8d0062dc"></script>
+    <script src="http://www.variflight.com/_newstatic/dest/js/countryCode.js?v=cd7ff69153103daf5ec8a59309dbaf1e"></script>
+    <script>
+        var currentModule = "flight";
+        var currentController = "list";
+        var currentAction = "fnum";
+    </script>
+    <style>
+        .single:before {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 6px solid #999999;
+            position: absolute;
+            right: 10px;
+            top: 28px;
+        }
+    </style>
+</head>
+<script>
+    var BASE_URL = '/';
+    var SITE_ID = 'AE71649A58c77';
+
+    function getUrl(url, params) {
+        url = BASE_URL + url;
+        var querystr = '';
+        if (params) {
+            if (typeof params == 'object') {
+                querystr = $.param(params)
+            } else {
+                if (params.indexOf("&") == 0) {
+                    params = params.substr(1, params.length);
+                }
+                querystr = params;
+            }
+        }
+
+        var p = url.indexOf("?");
+        if (querystr && p !== -1) {
+            url = url.substr(0, p) + '?' + SITE_ID + "&" + url.substr(url.indexOf('?') + 1, url.length)
+            url = url + "&" + querystr;
+        } else if (querystr) {
+            url = url + "?" + SITE_ID + '&' + querystr;
+        } else {
+            url = url + "?" + SITE_ID;
+        }
+        return url;
+    }
+</script>
+<body>
+<div class="header_wrap" style="background: url(../image/background2.png)">
+    <div class="header">
+        <div class="topMenu clearfix">
+            <div class="link logo pull-left" style="margin-top: 0px;">
+                <img th:src="@{image/logo.png}" width="100" height="100" alt="logo" style="border-radius: 25%">
+            </div>
+            <ul class="menu item pull-left">
+                <li class="top-menu-item   ">
+                    <a href="/?AE71649A58c77=" class="menu-hd">
+                        <span style="font-weight: bold">可视化大屏</span>
+                    </a>
+                </li>
+                <li class="top-menu-item top-menu-noclick">
+                    <a class="menu-hd cur_pointer">
+                        <span style="font-weight: bold">基于机器学习航班延误率预测分析系统</span>
+                    </a>
+                    <div class="menu-dropdown common-header-clearfix">
+                        <div class="menu-dropdown-inner">
+                            <p><a href="http://www.airsavvi.com/zh/services?id=1" target="_blank">航班实时追踪</a></p>
+                            <p><a href="http://www.airsavvi.com/zh/services?id=2" target="_blank">行程规划工具</a>
+                            <p><a href="http://www.airsavvi.com/zh/services?id=3" target="_blank">航班动态服务</a>
+                            <p><a href="http://www.airsavvi.com/zh/services?id=4" target="_blank">航班舒适度指数</a>
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li class="top-menu-item">
+                    <a class="menu-hd cur_pointer">
+                        <a href="https://www.bilibili.com/video/BV1iF411P7kR/?spm_id_from=333.788.recommend_more_video.-1&vd_source=6883618d4aa0ca8696989068816f0f70" target="_blank"><span style="font-weight: bold">科普：航班延误后应该做什么？</span></a>
+
+                    </a>
+                </li>
+                <li class="top-menu-item top-menu-noclick">
+
+                    <div class="menu-dropdown common-header-clearfix">
+                        <div class="menu-dropdown-inner">
+                            <p><a href="/download?AE71649A58c77=" target="_blank">旅客版APP</a></p>
+                            <p><a href="/ontimereport/ynbapp/index?AE71649A58c77=" target="_blank">业内版APP</a>
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="myfeeyo_log pull-right menu item pull-left" id="selectBox">
+                <li class="top-menu-item top-menu-noclick">
+                    <a href="/en" class="cur_pointer single" id="english">
+                        <span id="englishSpan">English</span>
+                    </a>
+                    <div class="menu-dropdown common-header-clearfix">
+                        <div class="menu-dropdown-inner">
+                            <p><a href="/language/ru?AE71649A58c77=" id="russian">Русский</a></p>
+                            <p><a href="/language/es?AE71649A58c77=" id="spain">Español</a></p>
+                        </div>
+                    </div>
+                </li>
+                <li class="userLogin myHomeCenter"
+                    style="display: none">
+                    <div class="usercenter_m">
+                        <a class="usercenter_in" href="/user/center?AE71649A58c77="
+                           style="background:none;color:#222;">个人中心</a>
+                        <div class="menu-dropdown-inner">
+                            <p><a href="/user/revise?AE71649A58c77=">修改资料</a></p>
+                            <p><a href="javascript:;" onclick="c_server.widget.signOut();">退出登录</a></p>
+                        </div>
+                    </div>
+                </li>
+                <li class="userLogin loginRegPanel" style="display: block">
+                    <a href="javascript:feeyo.openModel('用户登录',log_model)">登录 / 注册</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+<div class="f_content">
+    <!-- 搜索条 -->
+    <div class="authCodeBox" style="display: none;">
+        <div
+                style="z-index:9998;position: fixed;top: 0;left: 0;bottom: 0;right: 0;width: 100%;height: 100%;background:rgba(0,0,0,.7);"></div>
+        <div
+                style="z-index:9999;position: fixed;top: 50%;left: 50%;-webkit-transform: translate(-50%,-50%);-moz-transform: translate(-50%,-50%);-ms-transform: translate(-50%,-50%);-o-transform: translate(-50%,-50%);transform: translate(-50%,-50%);padding: 30px;background: #fff; border-radius: 6px;">
+            <div>
+                <input type="text" id="authCodeImgInput" placeholder="输入验证码" value=""
+                       class="fl_pop_input_secode"
+                       style="padding: 5px;background-color: #fff;border-radius: 4px;width:100px;height: 40px;display: inline-block;vertical-align: middle;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;border: 1px solid #888;margin-right: 10px;font-size:14px;">
+                <img width="65" height="38" src="/flight/index/productcaptcha?AE71649A58c77="
+                     style="display: inline-block;vertical-align: middle;"
+                     id="authCodeImg" onclick="c_server.widget.refreshDownlinkYzm();">
+            </div>
+            <div>
+                <input id="authCodeCheck" type="button" class="y-btn-grey y-btn-greyL" value="提&nbsp;交"
+                       style="background-color: #3d86e5;width: 100%;height: 40px;border-radius:4px;color: #fff;font-size:14px;text-align: center;margin-top: 20px;;">
+            </div>
+        </div>
+    </div>
+    <div class="fly_Search" id="fly_Search_scroll">
+        <div class="stopMain clearfix l_stopMain" style="padding: 30px 0 30px 10px;">
+            <div class="toggle_person left searchBarTog">
+                <input type="hidden" value="2020" id="friendYear"/>
+
+                <a id="friendOrder"
+                   style="display:block;width:140px;height:36px;line-height:36px;color:#ffffff;background:#3d86e5;text-decoration: none;cursor: default;"
+                   role="friend" title="按航班号">在右侧输入航班号</a>
+            </div>
+            <div id="byNum" class="left" style="display:block;">
+                <label class="byNumLabel left">
+                    <input id="byNumInput" name="byNumInput" type="text" class="bor"
+                           maxlength="10" placeholder="请输入航班号，如VQ7099" autocomplete="off" value="VQ7099">
+                    <div id="codeFilterBox">
+                        <ul></ul>
+                        <p>历史航班号记录</p>
+                    </div>
+                </label>
+                <label class="byNumLabel left">
+                    <!--<div class="text">出发时间</div>-->
+                    <span class="datepic"></span>
+                    <input type="text" maxlength="10" id="numDatepicker" placeholder="出发时间" class="bor" autocomplete="off" style="width: 270px">
+                    <div class="clear"></div>
+                </label>
+                <p class="left">
+                    <input id="byNumBtn1" name="byNumBtn" type="button" class="y-btn-grey y-btn-greyL" value="查&nbsp;询">
+                </p>
+            </div>
+            <div id="byCity" class="left" style="display:none;">
+                <div class="Citylabel left">
+                    <input type="text" placeholder="出发城市" maxlength="20" onclick="search_input_focus(this)"
+                           onblur="search_input_blur()" class="bor autocomplete ac_input" data-id="dep_city"
+                           id="dep_city"
+                           style="color:#000" value="北京首都">
+                    <div class="change" id="changeCity"></div>
+                    <!--点击切换始发地,换change2-->
+                    <input type="text" placeholder="到达城市" maxlength="20" onclick="search_input_focus(this)"
+                           onblur="search_input_blur()" class="bor autocomplete ac_input" data-id="arr_city"
+                           id="arr_city"
+                           style="color:#000" value="香港">
+                    <div id="cityFilterBox">
+                        <div class="cityFilterWrap">
+                            <div class="cityFilterIn">
+                                <div class="cityFilterHead">
+                                    <ul class="clearfix">
+                                        <li class="cur">热门</li>
+                                        <li>ABCD</li>
+                                        <li>EFGH</li>
+                                        <li>JKLM</li>
+                                        <li>NOPQRS</li>
+                                        <li>TUVWX</li>
+                                        <li>YZ</li>
+                                        <li id="hotOutTog" style="padding:0px;">国际/港澳台热门</li>
+                                    </ul>
+                                </div>
+                                <div class="cityFilterTable" id="cityFilterTable">
+                                    <div class="cityFilterHot">
+                                        <ul></ul>
+                                    </div>
+                                    <div class="cityFilterByAD">
+                                        <ul></ul>
+                                    </div>
+                                    <div class="cityFilterByEH">
+                                        <ul></ul>
+                                    </div>
+                                    <div class="cityFilterByJM">
+                                        <ul></ul>
+                                    </div>
+                                    <div class="cityFilterByNS">
+                                        <ul></ul>
+                                    </div>
+                                    <div class="cityFilterByTX">
+                                        <ul></ul>
+                                    </div>
+                                    <div class="cityFilterByYZ">
+                                        <ul></ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cityFilterOut">
+                                <div class="cityFilterHead">
+                                    <ul class="clearfix">
+                                        <li class="cur" style="padding:0px;">国际/港澳台热门</li>
+                                        <li>亚洲</li>
+                                        <li>欧洲</li>
+                                        <li>美洲</li>
+                                        <li>非洲</li>
+                                        <li>大洋洲</li>
+                                        <li id="hotInTog">国内热门</li>
+                                    </ul>
+                                </div>
+                                <div class="cityFilterTable" id="cityFilterTable2">
+                                    <div class="cityFilterByOuthot clearfix"></div>
+                                    <div class="cityFilterByAsia clearfix"></div>
+                                    <div class="cityFilterByEurope clearfix"></div>
+                                    <div class="cityFilterByAmerica clearfix"></div>
+                                    <div class="cityFilterByAfrica clearfix"></div>
+                                    <div class="cityFilterByOceania clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="history_city">
+                            <div class="history_city_tit">
+                                <div class="history_city_tit_line"></div>
+                                <div class="history_city_tit_txt">历史起降地记录</div>
+                            </div>
+                            <div class="history_city_table" id="history_city_table">
+                                <ul></ul>
+                            </div>
+                        </div>
+                        <div class="history_code">
+                            <ul></ul>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <label class="container left datepicker_l">
+                    <div class="text">出发时间</div>
+                    <span class="datepic"></span>
+                    <input type="text" maxlength="10" id="cityDatepicker" value="2020-05-19" class="index_date"
+                           readonly>
+                    <div class="clear"></div>
+                </label>
+                <p class="left">
+                    <input id="byCityBtn" name="byCityBtn" type="button" class="y-btn-grey y-btn-greyL"
+                           value="查&nbsp;询">
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        $(function () {
+            var usa = navigator.userAgent;
+            var reg = /MSIE 8.0/;
+            //IE8下由于被刷新页面时input值被清空，需再次塞值
+            if (reg.test(usa)) {
+                var depCity = "北京首都";
+                var arrCity = "香港";
+                var fnum = "CA111";
+                console.log(arrCity);
+                $('#dep_city').val(depCity);
+                $('#arr_city').val(arrCity);
+                $('#byNumInput').val(fnum);
+            }
+
+            ""
+            ""
+        });
+    </script>
+    <!-- 搜索列表页 -->
+    <div class="fly_list">
+        <div class="tit">
+            <h1 title="VQ7099" id="hangban" style="display: none;">VQ7099<span>共1次航班</span>
+            </h1>
+        </div>
+        <div class="li_box" id="li_box">
+            <div class="t_tit" id="t_tit">
+                <p class="w260">航班信息</p>
+                <p class="w150">计划起飞</p>
+                <p class="w150">实际起飞</p>
+                <p class="w150">出发地</p>
+                <p class="w150">计划到达</p>
+                <p class="w150">实际到达</p>
+                <p class="w150">到达地</p>
+                <p class="w150">准点率</p>
+                <!-- <p class="w150">订制</p> -->
+                <div class="clear"></div>
+            </div>
+            <ul id="list">
+                <li style="position: relative;">
+                    <a class="searchlist_innerli" style="height: 100px" href="/schedule/PEK-HKG-CA111.html?AE71649A58c77="></a>
+                    <!--  共享航班	-->
+                    <!--  共享航班	-->
+                    <div class="li_com" style="height: 80px">
+                                    <span class="w260">
+                                        <img th:src="@{/image/air.jpg}" width="22" height="22" align="中国国航">
+                                        <b>
+                                            <a href="javascript:void(0);" title="中国国航">中国国航</a>
+                                            <a href="javascript:void(0);" title="CA111" id="m_no">CA111</a>
+                                        </b>
+                                    </span>
+
+                                    <span class="w150" dplan="09:30" id="m_startTime">09:30</span>
+
+                                    <span class="w150 randEle">--</span>
+
+                                    <span class="w150" id="m_startAddr">北京首都T3</span>
+
+                                    <span class="w150" aplan="13:05" id="m_endTime">13:05</span>
+                                    <span class="w150 randEle">--</span>
+                                    <span class="w150" id="m_enAddr">香港T1</span>
+                                    <!-- 准点率 -->
+                                    <span class="w150" id="m_arr">50%</span>
+
+                                    <div class="clear"></div>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+    <script>
+        function getElementsByClassName(className, tagName, node) {
+            if (node) {
+                node = typeof node == "string" ? document.getElementById(node) : node;
+            } else {
+                node = document.body;
+            }
+            tagName = tagName || "*";
+            if (document.getElementsByClassName) {
+                return node.getElementsByClassName(className);
+            } else {
+                var tag = node.getElementsByTagName(tagName);
+                var tagAll = [];
+                for (var i = 0; i < tag.length; i++) {
+                    for (var j = 0, n = tag[i].className.split(' '); j < n.length; j++) {
+                        if (n[j] == className) {
+                            tagAll.push(tag[i]);
+                            break;
+                        }
+                    }
+                }
+                return tagAll;
+            }
+        }
+
+
+        b(1, 2);
+
+        function b() {
+            var divObj = getElementsByClassName('li_com');
+            var temp = [];
+            var spanObj;
+
+            for (var i = 0; i < divObj.length; i++) {
+                spanObj = getElementsByClassName('randEle', 'span', divObj[i]);
+                temp = [];
+                for (var m = 0; m < arguments.length; m++) {
+                    temp[arguments[m] - 1] = spanObj[m].innerHTML;
+                }
+
+                for (var n = 0; n < spanObj.length; n++) {
+                    spanObj[n].innerHTML = temp[n];
+                }
+
+            }
+        }
+
+        var appointTop = $("#li_box").position().top;
+        (function () {
+            /*
+             --两种情况
+             --1.正常滚动搜索框固定
+             --2.用户滚动后再次刷新
+             */
+
+            //用户滚动后再次刷新
+            var iniTop = $(window).scrollTop();
+            searchBarFix(iniTop);
+            //正常滚动搜索框固定
+            $(window).scroll(function () {
+                var currentTop = $(window).scrollTop();
+                searchBarFix(currentTop);
+            });
+        })();
+
+        //搜索条滚动定位
+        function searchBarFix(currentTop) {
+            var fly_Search_scroll = $("#t_tit");
+            var li_box = $('#li_box');
+            //var f_content = $('.f_content');
+            if (currentTop > appointTop) {
+                if (!fly_Search_scroll.hasClass('search_scroll_fixed')) {
+                    fly_Search_scroll.addClass('search_scroll_fixed');
+                    li_box.addClass('li_box_pad');
+                }
+            } else {
+                if (fly_Search_scroll.hasClass('search_scroll_fixed')) {
+                    fly_Search_scroll.removeClass('search_scroll_fixed');
+                    li_box.removeClass('li_box_pad');
+                }
+            }
+        }
+
+        var depCode = "PEK";
+        var arrCode = "HKG";
+        var depCity = "北京首都";
+        var arrCity = "香港";
+        $("#byNum").show();
+        $("#byCity").hide();
+        $(".select").text($(".byNum").text());
+    </script>
+</div>
+<!--footer begin -->
+<div class="footer">
+    <p class="f_t">
+        <a href="http://www.baidu.com" target="_blank">本系统预测的原理是采用lightGBM与catboost双模型预测，采用神经网络架构分配权重优化预测结果，将预测结果存到MySQL数据库中，使用JAVA的SpringBoot框架+HTML进行页面构建以及可视化展示 </a>
+
+    </p>
+
+    <p> 
+        &nbsp;&nbsp;
+    </p>
+    <p>
+        <a href="http://www.carnoc.com" target="_blank" style="color: #999"></a>
+        <a href="http://www.jdair.net" target="_blank" style="color: #999"></a>
+        <a href="http://www.csair.com/" target="_blank" style="color: #999"></a>
+        <a href="http://www.belltrip.cn/" target="_blank" style="color: #999"></a>
+        <a href="http://www.fuzhou-air.cn/" target="_blank" style="color: #999"></a>
+        <a href="http://www.carnoc.com/AFT/index.html" target="_blank" style="color: #999"></a>
+    </p>
+</div>
+
+<!--footer end -->
+</body>
+
+<script>
+    $("#byNumBtn1").click(function () {
+        var airNo = $("#byNumInput").val();
+        var airDate = $("#numDatepicker").val()
+        var param = {
+            "airNo": airNo,
+            "airDate": airDate
+        }
+        console.log(param)
+        $.ajax({
+            type: "GET",
+            url: "/detail/info",
+            data: param,
+            async: true,
+            success: function (res) {
+                console.log(res)
+                if (res[0] != null) {
+                    var airplane = res[0];
+                    $("#m_no").html(airplane.no);
+                    $("#m_enAddr").html(airplane.endAddr);
+                    $("#m_startAddr").html(airplane.startAddr);
+                    $("#m_startTime").html(airplane.startTime);
+                    $("#m_endTime").html(airplane.endTime);
+                    $("#m_arr").html(airplane.arrPercent);
+                    $("#list").show(airplane.no);
+                    $("#hangban").html();
+                    $("#hangban").html(airplane.no);
+                    $("#hangban").show();
+
+                } else {
+                    layer.msg("没有查到相关航班信息！", {icon: 2, time: 2000});
+                }
+            }
+        });
+    })
+</script>
+</html>
+

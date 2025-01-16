@@ -1,0 +1,51 @@
+/*! variflight 最后发布于： 2017-10-30 */
+/*! variflight 最后发布于： 2017-08-29 */
+article,aside,blockquote,body,button,code,dd,details,div,dl,dt,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,hr,input,legend,li,menu,nav,ol,p,pre,section,td,textarea,th,ul {
+    margin: 0;
+    padding: 0
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,iframe,menu,nav,section {
+    display: block
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-size: 100%;
+    font-weight: 500
+}
+
+address,cite,dfn,em,i,var {
+    font-style: normal;
+    font-weight: 400
+}
+
+dfn {
+    font-family: Arial
+}
+
+ol,ul {
+    list-style: none
+}
+
+a {
+    color: #000;
+    text-decoration: none
+}
+
+button,fieldset,img,input {
+    border: 0
+}
+
+button,input,select,textarea {
+    font-size: 100%
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+input {
+    -webkit-appearance: none;
+    border-radius: 0
+}

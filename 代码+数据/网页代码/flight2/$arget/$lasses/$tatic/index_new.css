@@ -1,0 +1,1281 @@
+/*! variflight 最后发布于： 2018-02-05 */
+/*! variflight 最后发布于： 2017-08-29 */
+.f_content {
+    background-color: #fbfbfc
+}
+
+.f_content.pd {
+    padding-top: 121px
+}
+
+.f_content .big_BG {
+    text-align: center;
+    width: 100%;
+    height: 600px;
+    min-width: 1200px;
+    position: relative;
+    z-index: 1
+}
+
+.fySearch {
+    width: 1200px;
+    margin: 0 auto;
+    height: 600px
+}
+
+.stopImg {
+    padding-top: 115px;
+    color: #fff;
+    font-size: 26px
+}
+
+.stopImg .mt {
+    font-size: 54px;
+    line-height: 60px;
+    font-weight: 700
+}
+
+.stopImg .mc {
+    font-size: 24px;
+    margin-top: 20px
+}
+
+.stopMain {
+    margin-top: 40px
+}
+
+.downAppI {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 400px;
+    z-index: 9;
+    text-align: center
+}
+
+.downAppI span {
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    margin: 0 auto;
+    width: 160px;
+    display: block
+}
+
+.downAppI img {
+    display: block;
+    margin: 10px auto
+}
+
+.stopMain div.Citylabel, .stopMain label {
+    display: block;
+    text-align: left;
+    margin: 0 10px;
+    width: 280px
+}
+
+.stopMain label.byNumLabel, .stopMain label.datepicker_l, .stopMain label.datepicker_r {
+    width: 270px
+}
+
+.stopMain label.byNumLabel {
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 4px;
+    position: relative
+}
+
+.stopMain label.byNumLabel #byNumInput {
+    width: 100%
+}
+
+.stopMain label.container {
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 4px
+}
+
+.stopMain div.Citylabel input, .stopMain label input {
+    border: 0;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    text-align: center
+}
+
+.stopMain div.Citylabel {
+    position: relative;
+    background-color: #fff;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px
+}
+
+.stopMain div.Citylabel input {
+    float: left;
+    text-align: center
+}
+
+.stopMain div.Citylabel input.autocomplete {
+    width: 115px;
+    padding: 5px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    text-align: center;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px
+}
+
+.stopMain .container {
+    position: relative
+}
+
+.stopMain .container input {
+    width: 100%;
+    text-indent: 85px;
+    color: #9c9c9c
+}
+
+.stopMain .container .text {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #9c9c9c;
+    font-size: 14px
+}
+
+.stopMain label .post {
+    background: url(../img/icon_index.png) 0 -28px no-repeat
+}
+
+.stopMain label .datepic {
+    background: url(../img/calendar@2x.png) no-repeat
+}
+
+.stopMain label .datepic, .stopMain label .post {
+    width: 20px;
+    height: 20px;
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer
+}
+
+.stopMain .change, .stopMain .change2 {
+    float: left;
+    width: 20px;
+    height: 25px;
+    cursor: pointer
+}
+
+.stopMain .change {
+    background: url(../img/arrows.png) 50% 10px no-repeat;
+    margin: 5px
+}
+
+.stopMain .change2 {
+    background: url(../img/icon_index.png) 0 -112px no-repeat;
+    margin: 0 5px
+}
+
+.stopMain .drop {
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    color: #2d3133;
+    font-size: 16px;
+    background: url(../img/arrow_down.png) 254px 10px no-repeat #fff;
+    border-radius: 4px
+}
+
+.stopMain .drop .select {
+    text-align: left;
+    padding: 0 10px;
+    font-weight: 700
+}
+
+.stopMain label .down {
+    display: none;
+    position: absolute;
+    z-index: 8;
+    top: 41px;
+    left: 0;
+    background: #fff;
+    width: 280px;
+    cursor: pointer;
+    border-top: 0;
+    border-radius: 3px;
+    overflow: hidden
+}
+
+.stopMain label .down li {
+    line-height: 25px;
+    padding: 5px 10px;
+    font-weight: 400
+}
+
+.stopMain label .down li.byNum {
+    border-top: 1px #d6d6d6 solid
+}
+
+.stopMain label .down li:hover {
+    background-color: #1e90ff;
+    color: #fff
+}
+
+.stopMain .y-btn-grey {
+    display: inline-block;
+    height: 40px;
+    width: 280px;
+    text-align: center;
+    outline: 0;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+    font-weight: 700;
+    border-radius: 4px
+}
+
+.i_item {
+    background: #fff
+}
+
+.i_item ul, .i_partner ul {
+    width: 1235px;
+    margin: 0 auto;
+    overflow: hidden
+}
+
+.i_item li {
+    float: left;
+    width: 25%;
+    text-align: center;
+    overflow: hidden;
+    padding: 60px 0
+}
+
+.i_item li h2 {
+    font-size: 20px;
+    color: #2d3133;
+    font-weight: 700;
+    padding-bottom: 15px
+}
+
+.i_item li p {
+    color: #666;
+    font-size: 16px;
+    margin-top: 15px !important
+}
+
+.i_item li h2, .i_item li p {
+    width: 240px;
+    margin: 0 auto
+}
+
+.i_partner {
+    background: url(../img/link_bg.jpg) center top no-repeat;
+    padding-bottom: 20px
+}
+
+.i_partner p.t {
+    color: #fff;
+    text-align: center;
+    font-size: 25px;
+    padding: 70px 0 50px
+}
+
+.i_partner ul li {
+    float: left;
+    width: 208px;
+    border: 1px solid #fff;
+    height: 140px;
+    overflow: hidden;
+    margin: 0 20px 40px;
+    text-align: center
+}
+
+.i_partner ul li:nth-child(5n) {
+    margin-right: 0
+}
+
+.i_partner ul li img {
+    max-height: 62px;
+    display: inline-block;
+    vertical-align: middle
+}
+
+.i_partner ul li:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 0;
+    height: 100%
+}
+
+.l_stopMain {
+    width: 1200px;
+    margin: 0 auto
+}
+
+#cityFilterBox {
+    width: 480px;
+    padding: 20px;
+    position: absolute;
+    top: 42px;
+    left: 0;
+    z-index: 99;
+    background-color: #fff
+}
+
+#cityFilterClose {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 20px
+}
+
+.cityFilterHead {
+    border-bottom: 1px solid #666
+}
+
+.cityFilterHead li {
+    float: left;
+    display: inline;
+    margin-right: 7px;
+    cursor: pointer;
+    padding: 0 6px;
+    font-weight: 700
+}
+
+.cityFilterHead li.cur {
+    color: #1E90FF;
+    border-bottom: 1px solid #1E90FF;
+    font-weight: 700
+}
+
+.cityFilterTable {
+    padding: 10px 0
+}
+
+.cityFilterList li {
+    float: left;
+    display: inline;
+    padding: 5px;
+    cursor: pointer
+}
+
+.cityFilterList li:hover {
+    color: #fff;
+    background-color: #1E90FF
+}
+
+.cityFilterLabel {
+    width: 42px;
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    font-weight: bolder;
+    color: #000
+}
+
+.cityFilterList {
+    display: inline-block;
+    width: 350px
+}
+
+.cityFilterByAD, .cityFilterByAfrica, .cityFilterByAmerica, .cityFilterByAsia, .cityFilterByEH, .cityFilterByEurope, .cityFilterByJM, .cityFilterByNS, .cityFilterByOceania, .cityFilterByOuthot, .cityFilterByTX, .cityFilterByYZ, .cityFilterHot {
+    display: none
+}
+
+.cityFilterTable div li {
+    padding-left: 42px;
+    position: relative
+}
+
+.cityFilterByAfrica span, .cityFilterByAmerica span, .cityFilterByAsia span, .cityFilterByEurope span, .cityFilterByOceania span, .cityFilterByOuthot span, .cityFilterTable div li span {
+    padding: 5px;
+    margin: 0 5px 5px 0;
+    float: left;
+    display: inline
+}
+
+.cityFilterByAfrica span:hover, .cityFilterByAmerica span:hover, .cityFilterByAsia span:hover, .cityFilterByEurope span:hover, .cityFilterByOceania span:hover, .cityFilterByOuthot span:hover, .cityFilterTable div li span:hover {
+    background-color: #008DE5;
+    color: #fff;
+    cursor: pointer
+}
+
+.cityFilterByOuthot, .cityFilterHot {
+    display: block
+}
+
+#cityFilterBox {
+    display: none
+}
+
+.cityFilterOut {
+    display: none;
+    width: 480px
+}
+
+.cityFilterIn {
+    display: block;
+    width: 470px
+}
+
+.history_city {
+    margin-top: 10px
+}
+
+.history_city_tit {
+    position: relative;
+    height: 20px
+}
+
+.history_city_tit_line {
+    width: 100%;
+    height: 1px;
+    background-color: #9a9a9a;
+    position: absolute;
+    top: 5px;
+    left: 0
+}
+
+.history_city_tit_txt {
+    position: absolute;
+    left: 50%;
+    top: -3px;
+    text-align: center;
+    padding: 0 10px;
+    background-color: #fff;
+    margin-left: -50px;
+    color: #9a9a9a
+}
+
+#history_city_table li {
+    display: inline-block;
+    margin: 0 10px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center
+}
+
+#history_city_table li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0 5px;
+    color: #9a9a9a
+}
+
+#history_city_table li a:hover {
+    text-decoration: none;
+    background-color: #3d86e5;
+    color: #fff
+}
+
+#codeFilterBox {
+    display: none;
+    position: absolute;
+    top: 42px;
+    left: 0;
+    width: 260px;
+    padding: 10px;
+    background-color: #fff
+}
+
+#codeFilterBox li {
+    display: inline-block;
+    width: 25%;
+    text-align: center;
+    margin-bottom: 10px
+}
+
+#codeFilterBox li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #9a9a9a;
+    font-size: 14px
+}
+
+#codeFilterBox li a:hover {
+    text-decoration: none;
+    background-color: #3d86e5;
+    color: #fff
+}
+
+#codeFilterBox p {
+    text-align: center;
+    color: #9a9a9a;
+    line-height: 20px;
+    font-size: 12px
+}
+
+@media screen and (max-width: 1199px) and (min-width: 1024px) {
+    .toggle_person.searchBarTog {
+        width: 206px !important
+    }
+
+    .toggleSpan.searchBarTogSpan, .toggle_person.searchBarTog a {
+        width: 83px !important
+    }
+
+    .header {
+        width: 1024px
+    }
+
+    .header .logo {
+        padding-left: 13px
+    }
+
+    .header .menu {
+        margin-left: 47px;
+        padding-right: 20px
+    }
+
+    .pull-right {
+        padding-right: 10px
+    }
+
+    .stopMain div.Citylabel, .stopMain label {
+        width: 242px;
+        margin: 0 10px 0 0
+    }
+
+    .stopMain label.datepicker_l, .stopMain label.datepicker_r {
+        width: 242px
+    }
+
+    .stopMain {
+        padding-left: 10px
+    }
+
+    .stopMain .y-btn-grey {
+        width: 242px;
+        margin-left: 0
+    }
+
+    .i_item li {
+        width: 21%;
+        padding: 60px 2%
+    }
+
+    .i_item li h2, .i_item li p {
+        width: 90%
+    }
+
+    .i_item ul, .i_partner ul {
+        width: 998px
+    }
+
+    .i_partner ul li {
+        width: 178px;
+        margin: 0 10px 40px
+    }
+
+    .stopMain div.Citylabel input.autocomplete {
+        width: 95px
+    }
+
+    .stopMain .container input {
+        text-indent: 0
+    }
+
+    .datepicker-container {
+        width: 242px
+    }
+
+    .stopMain .drop {
+        background-position: 215px 10px !important
+    }
+
+    .f_content .big_BG {
+        width: 100%;
+        min-width: 1024px
+    }
+
+    .fySearch {
+        width: 100%
+    }
+
+    .stopMain label .down {
+        width: 242px
+    }
+
+    .stopMain label.byNumLabel {
+        width: 232px;
+        position: relative
+    }
+
+    .l_stopMain {
+        width: 1014px
+    }
+
+    .mapBtn {
+        width: 1024px;
+        left: 50%;
+        margin-left: -512px
+    }
+
+    .flightStatistics ul.tongji, .mapbanner ul {
+        width: 1024px;
+        margin: 0 auto
+    }
+}
+
+.queryFlight {
+    background: url(../img/queryBanner.jpg) center 0 no-repeat
+}
+
+.queryFlight .queryFlight_wrap {
+    width: 1200px;
+    height: 600px;
+    margin: 0 auto
+}
+
+.queryFlight .queryFlight_wrap:before {
+    content: '';
+    width: 0;
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle
+}
+
+.queryFlight .queryFlight_wrap .qf_vertical_wrap {
+    display: inline-block;
+    vertical-align: middle
+}
+
+.cus_bar .cus_bar_line.qf_cus_bar_line {
+    left: 302px
+}
+
+.au_module_even, .au_module_odd {
+    padding: 100px 0;
+    text-align: center
+}
+
+.au_module_even .au_module_pic, .au_module_even .au_module_text, .au_module_odd .au_module_pic, .au_module_odd .au_module_text {
+    display: inline-block;
+    margin: 0 100px;
+    vertical-align: top
+}
+
+.au_module_even .au_module_text, .au_module_odd .au_module_text {
+    width: 463px;
+    text-align: left
+}
+
+.au_module_even .au_module_text h1, .au_module_odd .au_module_text h1 {
+    font-size: 35px;
+    color: #000;
+    margin-bottom: 20px
+}
+
+.au_module_even .au_module_text p, .au_module_odd .au_module_text p {
+    font-size: 14px;
+    color: #333;
+    line-height: 28px;
+    text-indent: 2rem
+}
+
+.au_module_even {
+    background-color: #fbfbfc
+}
+
+.aboutUs_banner {
+    background: url(../img/au_banner.jpg) center 0 no-repeat;
+    height: 440px;
+    width: 100%;
+    padding-top: 80px
+}
+
+.aboutUs_banner h1, .aboutUs_banner h2, .aboutUs_banner p {
+    color: #fff
+}
+
+.aboutUs_banner h1 {
+    font-size: 45px;
+    margin-bottom: 40px
+}
+
+.aboutUs_banner h2 {
+    font-size: 20px;
+    margin-bottom: 5px
+}
+
+.aboutUs_banner p {
+    font-size: 14px;
+    line-height: 30px;
+    text-indent: 2rem
+}
+
+.aboutUs_banner_wrap {
+    width: 1120px;
+    margin: 0 auto
+}
+
+.pcIcon_tip.internation_tip {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    width: 16px;
+    height: 16px;
+    background: url(../img/world.png) no-repeat
+}
+
+#internationTipBox {
+    width: auto;
+    height: auto;
+    padding: 0 10px;
+    z-index: 999;
+    white-space: nowrap;
+    font-size: 14px
+}
+
+.toggle_person.searchBarTog {
+    width: 138 searchBarTogSpanpx;
+    height: 36px;
+    font-size: 0;
+    margin: 0 10px;
+    background-color: #3d86e5
+}
+
+.toggle_person.searchBarTog a {
+    width: 120px;
+    height: 30px;
+    font-size: 16px;
+    line-height: 30px;
+    color: #9C9C9C;
+    text-align: center
+}
+
+.toggleSpan.searchBarTogSpan {
+    width: 120px;
+    height: 30px;
+    top: 2px;
+    background-color: #3d86e5
+}
+
+.toggle_person.searchBarTog .toggleA.on {
+    color: #fff
+}
+
+.list_share {
+    text-decoration: none;
+    font-size: 12px;
+    border-radius: 5px;
+    position: absolute;
+    padding: 0 5px;
+    left: 50px;
+    top: 48px;
+    color: #fff;
+    background: #dbe2ec;
+    cursor: default
+}
+
+.list_share:hover {
+    text-decoration: none
+}
+
+@media (max-width: 1000px) {
+    body {
+        min-width: 1350px
+    }
+}
+
+.school-banner {
+    height: 520px;
+    background: url(../img/school-banner.jpg) center 0 no-repeat
+}
+
+.school-banner-wrap {
+    width: 1200px;
+    margin: 0 auto;
+    position: relative
+}
+
+.schoole-banner-text {
+    position: absolute;
+    bottom: -520px;
+    left: 0;
+    width: 380px;
+    height: 387px;
+    padding: 45px 33px;
+    background: rgba(15, 15, 15, .6);
+    color: #fff
+}
+
+.schoole-banner-text h1 {
+    color: #fff;
+    margin-bottom: 25px
+}
+
+.schoole-banner-text p {
+    line-height: 26px;
+    font-size: 18px
+}
+
+.school-box {
+    margin-top: 57px
+}
+
+.school-box .school-title {
+    border-bottom: 1px solid #f0f0f0
+}
+
+.school-box .school-title span {
+    display: inline-block;
+    border-bottom: 2px solid #5096fa;
+    color: #2f2f2f;
+    padding-bottom: 10px;
+    font-size: 25px
+}
+
+.w1200 {
+    width: 1200px;
+    margin: 0 auto
+}
+
+.fcz-infor {
+    padding: 12px 0;
+    font-size: 15px;
+    line-height: 28px
+}
+
+.textIndent2 {
+    text-indent: 2rem
+}
+
+.fcz-history {
+    font-size: 0;
+    padding-top: 55px
+}
+
+.fcz-history li {
+    display: inline-block;
+    padding: 10px 0;
+    border-right: 1px solid #5096fa;
+    position: relative
+}
+
+.fcz-history li.fcz-history1, .fcz-history li.fcz-history2, .fcz-history li.fcz-history3, .fcz-history li.fcz-history4 {
+    border-bottom: 10px solid #5096fa;
+    vertical-align: bottom
+}
+
+.fcz-history li.fcz-history5, .fcz-history li.fcz-history6, .fcz-history li.fcz-history7, .fcz-history li.fcz-history8 {
+    border-top: 10px solid #a8bfff;
+    vertical-align: top;
+    margin-top: -10px
+}
+
+.fcz-history li.fcz-history1 span, .fcz-history li.fcz-history2 span, .fcz-history li.fcz-history3 span, .fcz-history li.fcz-history4 span {
+    top: 0
+}
+
+.fcz-history li.fcz-history5 span, .fcz-history li.fcz-history6 span, .fcz-history li.fcz-history7 span, .fcz-history li.fcz-history8 span {
+    bottom: 0
+}
+
+.fcz-history li.fcz-history1 h1, .fcz-history li.fcz-history2 h1, .fcz-history li.fcz-history3 h1, .fcz-history li.fcz-history4 h1 {
+    top: 0;
+    margin-top: 40px
+}
+
+.fcz-history li.fcz-history5 h1, .fcz-history li.fcz-history6 h1, .fcz-history li.fcz-history7 h1, .fcz-history li.fcz-history8 h1 {
+    bottom: 0;
+    margin-bottom: 35px
+}
+
+.fcz-history li p {
+    font-size: 15px
+}
+
+.fcz-history li.fcz-history1 {
+    position: relative;
+    z-index: 1;
+    width: 147px
+}
+
+.fcz-history li.fcz-history2 {
+    position: relative;
+    z-index: 3;
+    padding-left: 114px;
+    width: 159px
+}
+
+.fcz-history li.fcz-history3 {
+    position: relative;
+    z-index: 5;
+    padding-left: 44px;
+    width: 229px
+}
+
+.fcz-history li.fcz-history4 {
+    position: relative;
+    z-index: 7;
+    padding-left: 10px;
+    width: 263px
+}
+
+.fcz-history li.fcz-history5 {
+    position: relative;
+    z-index: 2;
+    padding-left: 132px;
+    width: 141px
+}
+
+.fcz-history li.fcz-history6 {
+    position: relative;
+    z-index: 4;
+    padding-left: 46px;
+    width: 227px
+}
+
+.fcz-history li.fcz-history7 {
+    position: relative;
+    z-index: 6;
+    padding-left: 30px;
+    width: 243px
+}
+
+.fcz-history li.fcz-history8 {
+    position: relative;
+    z-index: 8;
+    padding-left: 100px;
+    width: 173px
+}
+
+.school-content-wrap {
+    width: 1110px;
+    margin: 0 auto
+}
+
+.fcz-history li span {
+    border-right: 9px solid #5096fa;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    position: absolute;
+    right: 0
+}
+
+.fcz-history li h1 {
+    text-align: right;
+    color: #5096fa;
+    font-size: 40px;
+    padding-right: 10px
+}
+
+.fcz-history li.fcz-history3 p, .fcz-history li.fcz-history4 p, .fcz-history li.fcz-history6 p, .fcz-history li.fcz-history7 p {
+    padding-left: 17px;
+    position: relative
+}
+
+.fcz-history li.fcz-history3 p:before, .fcz-history li.fcz-history4 p:before, .fcz-history li.fcz-history6 p:before, .fcz-history li.fcz-history7 p:before {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background-color: #a8bfff;
+    position: absolute;
+    left: 0;
+    top: 8px
+}
+
+.school-middle-box {
+    width: 100%;
+    height: 213px;
+    background: url(../img/school-middle-bg.jpg) no-repeat;
+    padding: 80px 0
+}
+
+.school-middle-box p {
+    text-align: center;
+    font-size: 40px;
+    color: #fff
+}
+
+.school-middle-box p span {
+    display: inline-block;
+    border-bottom: 1px solid #fff;
+    padding: 7px 0
+}
+
+.school-middle-box p:last-child span {
+    border-bottom: none
+}
+
+.school-post li {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 8px;
+    height: 440px
+}
+
+.school-post li dd, .school-post li dt {
+    width: 180px;
+    padding: 0 15px
+}
+
+.school-post1 {
+    background-color: #77afff
+}
+
+.school-post2 {
+    background-color: #bddb34
+}
+
+.school-post3 {
+    background-color: #fa9c6e
+}
+
+.school-post4 {
+    background-color: #f36d82
+}
+
+.school-post5 {
+    background-color: #d669f6
+}
+
+.school-post1 dt {
+    background-color: #5096fa
+}
+
+.school-post2 dt {
+    background-color: #adcb22
+}
+
+.school-post3 dt {
+    background-color: #f58751
+}
+
+.school-post4 dt {
+    background-color: #ec5d74
+}
+
+.school-post5 dt {
+    background-color: #ca4dee
+}
+
+.school-post li dt {
+    padding-top: 40px;
+    padding-bottom: 15px;
+    color: #fff;
+    font-size: 26px;
+    position: relative
+}
+
+.school-post li dd {
+    padding: 10px 15px 0;
+    color: #fff;
+    font-size: 18px
+}
+
+.school-post li dd a {
+    color: #fff
+}
+
+.school-post {
+    margin-top: 30px
+}
+
+.school-post-icon1, .school-post-icon2, .school-post-icon3, .school-post-icon4, .school-post-icon5 {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 5px;
+    background: url(../img/position.png) no-repeat
+}
+
+.school-post-icon1 {
+    width: 69px;
+    height: 68px;
+    background-position: 0 0
+}
+
+.school-post-icon2 {
+    width: 49px;
+    height: 70px;
+    background-position: 0 -100px
+}
+
+.school-post-icon3 {
+    width: 51px;
+    height: 67px;
+    background-position: 0 -200px
+}
+
+.school-post-icon4 {
+    width: 48px;
+    height: 65px;
+    background-position: 0 -300px
+}
+
+.school-post-icon5 {
+    width: 67px;
+    height: 67px;
+    background-position: 0 -400px
+}
+
+.school-welfare-title {
+    font-size: 25px;
+    text-align: center;
+    margin: 50px 0
+}
+
+.school-welfare-list li {
+    display: inline-block;
+    margin-right: 70px;
+    margin-bottom: 60px;
+    vertical-align: top
+}
+
+.school-welfare-list p {
+    margin-top: 22px;
+    text-align: center;
+    font-size: 18px
+}
+
+.school-welfare-list li.school-welfare-linomar {
+    margin-right: 0
+}
+
+.school-stroke {
+    font-size: 0;
+    margin-top: 35px;
+    position: relative;
+    margin-bottom: 80px
+}
+
+.school-stroke-line {
+    background-color: #5096fa;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    top: 84px;
+    left: 0;
+    z-index: -1
+}
+
+.school-stroke li {
+    width: 175px;
+    display: inline-block;
+    margin-right: 8px;
+    vertical-align: top
+}
+
+.school-stroke li:last-child {
+    margin-right: 0
+}
+
+.school-stroke li h4 img {
+    max-width: 100%
+}
+
+.school-stroke li h1 {
+    font-size: 20px;
+    color: #666
+}
+
+.school-stroke li h2 {
+    font-size: 20px;
+    color: #5096fa;
+    font-weight: 700;
+    margin-bottom: 15px
+}
+
+.school-stroke li h1, .school-stroke li h2, .school-stroke li h3 {
+    text-align: center
+}
+
+.school-stroke li h3 {
+    margin-bottom: 35px
+}
+
+.school-stroke li p {
+    font-size: 14px;
+    color: #2f2f2f;
+    padding: 14px 17px;
+    line-height: 25px
+}
+
+.school-single {
+    border: 1px solid #eee;
+    height: 252px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px
+}
+
+.school-stroke-txt {
+    text-align: center;
+    color: #2f2f2f;
+    font-size: 24px;
+    margin-bottom: 80px
+}
+
+.jstd li {
+    margin-bottom: 15px
+}
+
+.jstd li span {
+    margin-right: 20px
+}
+
+.jstd1, .jstd2, .jstd3, .jstd4 {
+    display: inline-block;
+    width: 23px;
+    background: url(../img/school-icon.png) no-repeat
+}
+
+.jstd1 {
+    background-position: 0 0;
+    height: 15px
+}
+
+.jstd2 {
+    background-position: 0 -50px;
+    height: 28px
+}
+
+.jstd3 {
+    background-position: 0 -100px;
+    height: 24px
+}
+
+.jstd4 {
+    background-position: 0 -150px;
+    height: 24px
+}
+
+.jstd li em {
+    font-size: 18px;
+    color: #2f2f2f
+}
+
+.jstd li em a, .jstd li em i {
+    color: #5096fa
+}
+
+.jstd {
+    padding-bottom: 88px
+}
+
+#friendOrder {
+    display: block;
+    width: 140px;
+    height: 36px;
+    line-height: 36px;
+    color: #ffffff;
+    background: #3d86e5;
+    text-decoration: none;
+    cursor: default;
+}
